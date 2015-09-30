@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+ 
+        <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+		
+        <title>Hello World</title>
+		<script src="cordova.js"></script>
+		<!--<script src="js/jqm/jquery-1.11.1.min.js"></script>-->
+
+
+		<!--<script type="text/javascript" src="js/jquery-ui.min.js"></script>-->
+
+		   <!-- <script type="text/javascript" src="js/moment.min.js"></script>
+			<script type="text/javascript" src="js/jquery.ui.touch.js"></script>-->
+		
+			
+			
+			
+		<!--	  <script type="text/javascript" src="js/fullcalendar.min.js"></script>-->
+        <link rel="stylesheet" href="js/jqm/jquery.mobile-1.4.4.min.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/tut01.css" />-->
+		<!-- <link rel="stylesheet" href="css/jw-jqm-cal.css" />-->
+		<!-- <link rel="stylesheet" href="css/fullcalendar.css" />-->
+		 
+		 		<script type='text/javascript' src='js/_loader.js'></script>
+				        <script src="js/jqm/jquery.mobile-1.4.4.min.js"></script>
+								  <script type="text/javascript" src="js/jw-jqm-cal.js"></script>
+		<!-- <link rel="stylesheet" href="css/dino.css" />-->
+		<script type='application/javascript' src='js/fastclick.js'></script>
+		<script type="text/javascript" src="js/ejs.js"></script>
+		<script src="js/app.js"></script>
+
+        <style type='text/css'>
+
+	body {
+		margin-top: 40px;
+		text-align: center;
+		font-size: 14px;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		}
+
+	#calendar {
+		width: 50%;
+		/*margin: 0 auto;*/
+		}
+
+</style>
+	  
+    </head>
+    <body onload="init()">
+
+
+	
+<div data-role="page" id="index" data-theme="a">
+	<div data-role="header" data-position="fixed">
+	<h3>PRESTO</h3>
+	</div>
+<div data-role="content">
+<div class="sui-grid-b sui-responsive">
+    <div class="sui-block-a"><input data-icon="calendar" value="Calendar" type="button" onclick="showCalendar()"></div>
+    <div class="sui-block-b"><input data-icon="cloud" value="Files" type="button"></div>
+    <div class="sui-block-c"><input data-icon="user" sdata-iconpos="right" value="Contacts" type="button"></div>
+	<div class="sui-block-c"><input data-icon="heart" sdata-iconpos="right" value="Sentiment" type="button"></div>
+	<div class="sui-block-c"><input data-icon="tag" sdata-iconpos="right" value="Try and Buy" type="button"></div>
+	<div class="sui-block-c"><input data-icon="gear" sdata-iconpos="right" value="Tools" type="button"></div>
+</div>
+</div>
+</div>
+
+
+
+
+<div data-role="page" id="indexold" data-theme="a"> 
+<!-- Page header -->
+<div data-role="header" data-position="fixed" >
+<h1>Presto</h1>
+</div>
+<!-- Page header --> 
+
+<!-- Page body -->
+<div role="main" class="ui-content">
+<div class="ui-grid-b"> <!-- menu-container --> 
+
+<!-- Planning -->
+<div class="ui-block-a">
+<div class="ui-bar ui-bar-a">
+<div class="menu-elem"> <a href="#" onclick="showCalendar()">
+<div class="menu-img"> <img src="img/buttons/01-Bottone-P.png"> </div>
+</a> </div>
+</div>
+</div>
+
+<!-- Reach me -->
+<div class="ui-block-b">
+<div class="ui-bar ui-bar-a">
+<div class="menu-elem"> <a href="#">
+<div class="menu-img"> <img src="img/buttons/02-Bottone-R.png"> </div>
+</a> </div>
+</div>
+</div>
+
+<!-- e-library -->
+<div class="ui-block-c">
+<div class="ui-bar ui-bar-a">
+<div class="menu-elem"> <a href="#">
+<div class="menu-img"> <img src="img/buttons/03-Bottone-E.png"> </div>
+</a> </div>
+</div>
+</div>
+
+</div>
+<br>
+<div class="ui-grid-b"> 
+
+<!-- Social -->
+<div class="ui-block-a">
+<div class="ui-bar ui-bar-a">
+<div class="menu-elem"> <a href="#">
+<div class="menu-img"> <img src="img/buttons/04-Bottone-S.png"> </div>
+</a> </div>
+</div>
+</div>
+
+<!-- Try & Buy -->
+<div class="ui-block-b">
+<div class="ui-bar ui-bar-a">
+<div class="menu-elem"> <a href="#">
+<div class="menu-img"> <img src="img/buttons/05-Bottone-T.png"> </div>
+</a> </div>
+</div>
+</div>
+
+<!-- OTHERS -->
+<div class="ui-block-c">
+<div class="ui-bar ui-bar-a">
+<div class="menu-elem"> <a href="#">
+<div class="menu-img"> <img src="img/buttons/06-Bottone-O.png"> </div>
+</a> </div>
+</div>
+</div>
+
+</div>
+<!-- menu container --> 
+</div>
+<!-- Page body --> 
+
+</div>
+
+
+<div data-role="page" id="page_calendar" data-theme="a">
+
+<div data-role="header" data-position="fixed">
+ <a id="btnBack" data-role="button" href="#menuPanel" data-icon="back" data-iconpos="left" class="ui-btn-left">&nbsp;</a>
+	<h3>CALENDAR</h3>
+	<a id="btnCalendarView" data-role="button" href="#viewPanel" data-icon="bars" data-iconpos="right" class="ui-btn-right"> </a>
+	</div>
+	 <div id="calendar" ></div>
+<div data-role="content">
+  
+
+</div>
+   <div id="daydetail">
+   <ul data-role="listview" id="uldayevents" data-dividertheme="a" data-inset="false" class=" ui-listview ui-group-theme-a">
+   </ul>
+   </div>
+   <div id="message"></div>
+
+
+   <div id="menuPanel" data-role="panel" data-theme="a">
+	  <div class="sui-grid-b ui-responsive">
+	  <div class="but ui-block-a"><input data-icon="bullets" value="Index" type="button" onclick="gotoIndex()"></div>
+    <div class="but ui-block-a"><input data-icon="calendar" value="Calendar" type="button" onclick="setCalendar(0)"></div>
+	<div class="but ui-block-a"><input data-icon="calendar" value="Calendar2" type="button" onclick="setCalendar(1)"></div>
+    <div class="but ui-block-b"><input data-icon="cloud" value="Files" type="button"></div>
+    <div class="but ui-block-c"><input data-icon="user" sdata-iconpos="right" value="Contacts" type="button"></div>
+	<div class="but ui-block-c"><input data-icon="heart" sdata-iconpos="right" value="Sentiment" type="button"></div>
+	<div class="but ui-block-c"><input data-icon="tag" sdata-iconpos="right" value="Try and Buy" type="button"></div>
+	<div class="but ui-block-c"><input data-icon="gear" sdata-iconpos="right" value="Tools" type="button"></div>
+</div>
+    </div> 
+
+</div>
+
+<div data-role="page" id="eventDialog">
+<div data-role="header" data-position="fixed"><h3>Add an event</h3></div>
+<div data-role="content">
+  <div data-role="fieldcontain">
+            <input type="hidden" id="currdate" />
+            <input name="txtTitle" id="txtTitle" placeholder="Title" value="" type="text">
+			<textarea rows="20" name="txtDescr" id="txtDescr" placeholder="Description"> </textarea>
+  </div>	 		
+<a href="javascript:saveEvent()" data-role="button">Add event</a>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<% 
+  console.log(JSON.stringify(data));
+ for(var i=0; i<data.length; i++) { %>
+        <li sdata-theme='c' sclass="gradient">
+            <a class="sgradient ui-btn ui-left" onclick="viewDocument(this)" id='<%= data[i]._id %>_<%= data[i]._rev %>' href='#' data-transition='slide'>
+			  <table border="0" width="100%">
+			  <tr>
+			  <td width="60px"><div class="avatar-frame"><img src="img/document.png" class="imgli" /></div></td><td class="padded">
+			    
+                <span class="medium"><%= data[i].titolo.toUpperCase() %></span><br>
+			
+				 </td></tr>
+				 </table>
+            </a>
+        </li>
+    <% } %>
+	
+	
+	

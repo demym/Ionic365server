@@ -1,0 +1,26 @@
+<html>
+<head>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"/>
+<script type="text/javascript">
+
+ var $=jQuery;
+ 
+ 
+ $(document).ready(function() {
+   alert("eccoci");
+  
+  $.ajax({
+   url: 'https://ptt.mybluemix.net/?code=9cXJCCo0lQRfXjblBO010eZuq8i67Y',
+   type: "POST",
+   success: function(data) {
+    alert("fatto");
+   }
+   });
+ 
+ });
+
+</script> 
+</head>
+<body>
+</body>
+</html>

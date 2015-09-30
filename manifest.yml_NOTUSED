@@ -1,0 +1,11 @@
+applications:
+- services:
+  - rpozzi-jweb:DataCache
+  disk_quota: 1024M
+  host: rpozzi-nodejs
+  name: rpozzi-nodejs
+  command: node app
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  memory: 512M

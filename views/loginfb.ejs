@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Facebook Login JavaScript Example</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1025396610823101',
+      xfbml      : true,
+      version    : 'v2.2'
+    });
+  };
+
+  
+</script>
+<script>
+
+function checkLoginState() {
+    
+	console.log("checkLoginState");
+    FB.getLoginStatus(function(response) {
+	
+      statusChangeCallback(response);
+	  console.log("checkLoginState: "+JSON.stringify(response));
+    });
+}	
+</script>
+prova
+
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>
+
+</body>
+</html>

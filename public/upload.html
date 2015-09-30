@@ -1,0 +1,29 @@
+<html>
+<head>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript">
+$(document).ready(function() 
+{ 
+$('#fileattach').on('change', function() 
+{ 
+$("#preview").html('');
+$("#preview").html('<img src="loader.gif" alt="Uploading...."/>');
+$("#imageform").ajaxForm(
+{
+target: '#preview'
+}).submit();
+});
+}); 
+</script>
+</head>
+<body>
+<form id="imageform" method="post" enctype="multipart/form-data" action='http://ssodemyapp.mybluemix.net/upload'>
+<input type="text" id="titolo" name="titolo" />
+Upload image <input type="file" name="fileattach" id="fileattach" />
+</form>
+
+<div id='preview'>
+</div>
+</body>
+</html>

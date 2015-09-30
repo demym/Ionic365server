@@ -1,0 +1,14 @@
+<table width="100%" scellspacing="1" class="medium" style="padding: 10px; text-align: left">
+<tr><td width="100px">Title</td><td class="bold"><%=data.title.toUpperCase()%></td></tr>
+<tr><td>Customer</td><td class="bold"><%=data.customer.toUpperCase()%></td></tr>
+<tr><td>Type</td><td class="bold"><%=data.eventtype.toUpperCase()%></td></tr>
+<tr><td>Start</td><td class="bold"><%=moment(data.start).format("LLLL")%></td></tr>
+<tr><td>End</td><td class="bold"><%=moment(data.end).format("LLLL")%></td></tr>
+<tr><td >All day event</td><td class="bold">
+<% if (data.allDay=="true") { %>
+   YES
+   <% } else { %>
+   NO
+   <% } %></td></tr>
+</table>
+

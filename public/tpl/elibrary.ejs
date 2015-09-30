@@ -1,0 +1,64 @@
+ 
+     <li sdata-theme='c' sclass="gradient">
+            <a class="sgradient ui-btn ui-left"  href='#' data-transition='slide'>
+			  <table border="0" width="100%">
+			  <tr>
+			  <td width="60px"></td>
+			  <td>
+			    
+                <span class="small"><%= data.length %> documents found</span><br>
+			
+				 </td></tr>
+				 </table>
+            </a>
+        </li>
+ <% 
+  //console.log(JSON.stringify(data));
+ for(var i=0; i<data.length; i++) {
+   var titolo="";
+   if (data[i].titolo) titolo=data[i].titolo;
+ %> 
+        <li sdata-theme='c' sclass="gradient">
+            <a class="sgradient ui-btn ui-left" onclick="sviewDocument(this)" id='<%= data[i]._id %>_<%= data[i]._rev %>' href='#' data-transition='slide'>
+			  <table border="0" width="100%">
+			  <tr>
+			  <td width="60px"><div class="avatar-frame"><img src="img/document.png" class="imgli" /></div></td><td class="padded">
+			    
+                <span class="blue notbold"><%= titolo.toUpperCase() %></span><br><span class="small notbold">
+				<% if (data[i].category) { %>
+   <%= data[i].category %>
+   <% } else { %>
+  &nbsp;
+   <% } %>
+				</span>
+				<% 
+				var user=getCookie("user");
+				var role="";
+				if (user) {
+				 role=JSON.parse(user).role;
+				}
+
+                if (role=="sIBM_SALESREP")
+				
+                {		
+                 var sw="";
+                 if (data[i].sharewith) sw=data[i].sharewith;				 
+				%>
+			   <br><span class="blue"><%= sw %></span>
+			    <%
+				}
+				%>
+				 </td>
+				 <td width="80">
+				 <% if (role=="IBM_SALESREP") { %> 
+				 <a href="#"  onclick="shareUsers('#page_shareusers #content','<%=data[i].id%>','elibrary')" class="sui-btn-right ui-link ui-btn ui-btn-a ui-icon-sha ui-btn-icon-left ui-shadow ui-corner-all">Share</a>
+				 <% } %>
+				 </td>
+				 </tr>
+				 </table>
+            </a>
+        </li>
+    <% } %>
+	
+	
+	

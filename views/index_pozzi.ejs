@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/side_menu.css" />
+<link rel="stylesheet" href="css/jquery.mobile.flatui.css" />
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+<!-- jQuery & jQuery Mobile API -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+<!-- application custom javascript libraries -->
+<script type="text/javascript" src="js/index.js"></script>
+<title>IBM Bluemix</title>
+</head>
+<body>
+	<!-- ###################### START PAGE ###################### -->
+	<div data-role="page" id="start">
+		<div data-role="header" data-id="Header" id="startHeader" data-position="fixed">
+			<h3>IBM Bluemix NodeJs Web</h3>
+		</div>
+		<div data-role="content" class="ui-content">
+			<a href="#listaSpesa" id="listaSpesaBtn" data-transition="slide" data-role="button" data-corners="true" data-theme="f" data-mini="false">LISTA DELLA SPESA</a>
+			<a href="#userMgmt" id="userMgmtBtn" data-transition="slide" data-role="button" data-corners="true" data-theme="f" data-mini="false">GESTIONE UTENTI</a>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<ul data-role="listview" id="startListview" data-inset="true" data-theme="c" data-mini="true">
+				<li id="listitem"><a href="#needHelp">Need help?</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- ###################### USER MANAGEMENT PAGE ###################### -->
+	<div data-role="page" id="userMgmt" data-url="map-page">
+		<div data-role="header" data-id="Header" id="mainHeader" data-position="fixed">
+			<a href="#userMgmtShowMenu" data-icon="bars" data-role="button" id="button1" data-iconpos="notext" data-corners="false">Button</a>
+			<h3>IBM Bluemix NodeJs Web</h3>
+		</div>
+		<div data-role="panel" id="userMgmtShowMenu">
+			<ul data-role="listview" id="UlPanel" data-inset="false" data-theme="a">
+				<li data-role="list-divider" data-theme="a" class="panelHeader">SELEZIONA FUNZIONE</li>
+				<li><a href="#listaSpesa" id="mainListaSpesaLnk" onclick="handle('listaspesa')"><span class="menuSprites sbCheck"></span>LISTA DELLA SPESA</a></li>
+				<li><a href="#userMgmt" id="mainUserMgmtLnk" onclick="handle('userMgmt')"><span class="menuSprites sbAlerts"></span>GESTIONE UTENTI</a></li>
+			</ul>
+		</div>
+		<div data-role="content" class="padSignIn">
+			<div id="userMgmtTitle" class="title"></div>
+			<div id="userMgmtContent" class="map">
+				<div id="message"></div>
+				Name: <input type="text" name="username" id="username" />
+				Age: <input type="text" name="age" id="age" /> 
+				Location: <input type="text" name="location" id="location" />
+				<button name="addUser" id="addUser">ADD NEW USER</button>
+			</div>
+			<div id="users" class="map">
+				<ul id="listOfUsers" data-role="listview" data-split-icon="delete" data-theme="a">
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<ul data-role="listview" id="mainListview" data-inset="true" data-theme="c" data-mini="true">
+				<li id="listitem"><a href="#needHelp">Need help?</a></li>
+			</ul>
+		</div>
+		<div data-role="popup" id="delete" data-theme="d" data-overlay-theme="b" class="ui-content" style="max-width:340px;">
+			<h3>Will Delete User, are you sure?</h3>
+			<a href="index.html" data-role="button" data-rel="back" data-theme="b" data-icon="check" data-inline="true" data-mini="true" id="deleteUser">Yes</a>
+			<a href="index.html" data-role="button" data-rel="back" data-theme="b" data-icon="forward" data-inline="true" data-mini="true">No</a>	
+		</div>
+	</div>
+	<!-- ###################### LISTA SPESA PAGE ###################### -->
+	<div data-role="page" id="listaSpesa" data-url="map-page">
+		<div data-role="header" data-id="Header" id="mainHeader" data-position="fixed">
+			<a href="#listaSpesaShowMenu" data-icon="bars" data-role="button" id="button1" data-iconpos="notext" data-corners="false">Button</a>
+			<h3>IBM Bluemix NodeJs Web</h3>
+		</div>
+		<div data-role="panel" id="listaSpesaShowMenu">
+			<ul data-role="listview" id="UlPanel" data-inset="false" data-theme="a">
+				<li data-role="list-divider" data-theme="a" class="panelHeader">SELEZIONA FUNZIONE</li>
+				<li><a href="#listaSpesa" id="mainListaSpesaLnk" onclick="handle('listaspesa')"><span class="menuSprites sbCheck"></span>LISTA DELLA SPESA</a></li>
+				<li><a href="#userMgmt" id="mainUserMgmtLnk" onclick="handle('userMgmt')"><span class="menuSprites sbAlerts"></span>GESTIONE UTENTI</a></li>
+			</ul>
+		</div>
+		<div data-role="content" class="padSignIn">
+			<div id="listaSpesaTitle" class="title"></div>
+			<div class="ui-field-contain">
+				Item Name: <input type="text" name="itemInput" id="itemInput" />
+			</div>
+			<a class="ui-btn" id="addItem">ADD</a>
+			<div id="listaSpesaContent" class="map">
+				<ul id="listOfItems" data-role="listview" data-inset="true" data-theme="a">
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<ul data-role="listview" id="mainListview" data-inset="true" data-theme="c" data-mini="true">
+				<li id="listitem"><a href="#needHelp">Need help?</a></li>
+			</ul>
+		</div>
+		<div data-role="popup" id="deleteIt" data-theme="d" data-overlay-theme="b" class="ui-content" style="max-width:340px;">
+			<h3>Will Delete Item, are you sure?</h3>
+			<a href="index.html" data-role="button" data-rel="back" data-theme="b" data-icon="check" data-inline="true" data-mini="true" id="deleteItem">Yes</a>
+			<a href="index.html" data-role="button" data-rel="back" data-theme="b" data-icon="forward" data-inline="true" data-mini="true">No</a>	
+		</div>
+	</div>
+	<!-- ###################### NEED HELP PAGE ###################### -->
+	<div data-role="page" id="needHelp" data-theme="a">
+		<div data-role="header" data-id="Header" id="needHelpHeader" data-position="fixed" data-theme="a">
+			<a href="#start" data-transition="slide" data-direction="reverse" data-role="button" id="button0" data-icon="back" data-iconpos="notext" data-corners="false">Button</a>
+			<h3>Help</h3>
+		</div>
+		<div data-role="content" class="pad15">
+			<span class="signInHeader">Welcome<br /></span> 
+			<span class="signInText"> Help Help Help.
+			<br /><br /> Help Help Help.
+			</span>
+			<br />
+			<br /> 
+			<span class="terms head"> Online Privacy Notice<br /></span> 
+			<span class="terms"> Last updated January 1, 2014<br /> This Online
+				Privacy Notice applies .... This site may collect, use and share
+				information from or about you with our advertisements that appear on
+				the Sites and third party websites.
+			</span>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<% for(var i=0; i<data.length; i++) { %>
+        <li sdata-theme='c' sclass="gradient">
+            <a class="sgradient ui-btn ui-left" onclick="viewEvent(this)" id='<%= data[i].id %>_<%= data[i].rev %>' href='#' data-transition='slide'>
+			  <table border="0" width="100%">
+			  <tr>
+			  <td width="60px"><div class="avatar-frame"><img src="img/logo.png" class="imgli" /></div></td><td class="padded">
+			    
+                <span class="medium"><%= data[i].title.toUpperCase() %></span><br>
+				<span class="medium"><%=moment(data[i].start).format("LLLL")%></span><br>
+				<span class="small">
+				<%
+				if ($.trim(data[i].customer)!="") { %>
+				<%=data[i].customer%>
+				<%
+				} else {
+				%>&nbsp;
+				<%
+				}
+				 %></span>
+				 </td></tr>
+				 </table>
+            </a>
+        </li>
+    <% } %>
+	
+	
+	

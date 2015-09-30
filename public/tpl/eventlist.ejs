@@ -1,0 +1,56 @@
+
+<% for(var i=0; i<data.length; i++) { %>
+        <li sdata-theme='c' sclass="gradient">
+		     <!--<label style="padding: 20px 10px 0px 10px !important;margin: 0px 10px 0px 0px !important;border-width: 0px 1px 0px 0px !important;height:50px;float:left;width:50px;" data-corners="false">
+						<fieldset data-role="controlgroup" style="height:0px !important">
+                            
+                            <input id="checkbox_15382" name="checkbox_15382" class="item_checkbox" type="checkbox" value="false"/>
+						</fieldset>						
+					</label>-->
+            <a class="sgradient ui-btn ui-left" onclick="sviewEvent(this)" id='<%= data[i].id %>_<%= data[i].rev %>' href='#' data-transition='slide'>
+            
+			  <table border="0" width="98%">
+			  <tr>
+			 
+			  
+			  <td width="60px"><div class="avatar-frame"><img src="img/calendar.png" class="imgli" /></div></td><td class="padded">
+			    
+				<span class="medium notbold date" id="date_<%= moment(data[i].start).format('YYYYMMDDHHmmSS') %>"><%= moment(data[i].start).format("LLLL")%></span><br>
+                <span class="medium notbold blue"><%= data[i].title.toUpperCase() %></span><br>
+				<span class="small notbold"><%= getSafe(data[i].location).toUpperCase() %></span><br>
+				<table><tr>
+				<td><a href="javascript:window.open('<%=getSafe(data[i].url)%>', '_system');" style="width: 100px; vertical-align:middle; line-height: 20px; height: 35px;"  class="ui-link ui-btn  ui-shadow ui-corner-all ui-mini" data-role="button" data-icon="share">Site</a></td>
+				<td><a href="javascript:window.open('<%=getSafe(data[i].regurl)%>', '_system');" style="width: 100px; vertical-align:middle; line-height: 20px; height: 35px;"  class="ui-link ui-btn  ui-shadow ui-corner-all ui-mini" data-role="button" data-icon="share">Register</a></td>
+				</tr></table>	
+				
+				<span class="small notbold">
+				
+				&nbsp;</span>
+				 </td>
+				 <td width="100px">
+				 <% 
+			      var role="";
+				  var user=getCookie("user");
+				  colog(JSON.stringify(user));
+				  if (user.trim()!="") role=JSON.parse(user).role;
+				  
+				  if (role.trim().toLowerCase()!="customer")
+				  {
+				 %> 
+				 <table>
+				 <tr sheight="20"><td><a href="#" style="width: 100px; vertical-align:middle; line-height: 20px; height: 35px;" class="ui-link ui-btn ui-icon-sha ui-btn-icon-left ui-shadow ui-corner-all ui-mini" data-role="button" onclick="shareUsers('#page_shareusers #content','<%=data[i].id%>','eventcalendar')" data-icon="share">Share</a></td></tr>
+				<!-- <tr><td><a href=""<%=getSafe(data[i].url)%>" style="width: 100px; vertical-align:middle; line-height: 20px; height: 35px;" class="ui-link ui-btn  ui-shadow ui-corner-all ui-mini" data-role="button" data-icon="share">URL</a></td></tr>
+				 <tr><td><a href=""<%=getSafe(data[i].regurl)%>" style="width: 100px; vertical-align:middle; line-height: 20px; height: 35px;"  class="ui-link ui-btn  ui-shadow ui-corner-all ui-mini" data-role="button" data-icon="share">Register</a></td></tr>
+				 --></table>
+				 </td>
+				
+				 </tr>
+				 </table>
+				 <% } %>
+            </a>
+        </li>
+		 
+    <% } %>
+	
+	
+	

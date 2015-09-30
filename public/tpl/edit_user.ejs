@@ -1,0 +1,36 @@
+<!--<form method="post" action="demoform.asp">-->
+<!--<div class="ui-field-contain">-->
+<table width="100%" border="1">
+
+<%
+ 
+ if (!data.doc.role) data.doc.role="";
+ if (!data.doc.company) data.doc.company="";
+  if (!data.doc.email) data.doc.email="";
+  if (!data.doc.password) data.doc.password="";
+  if (!data.doc.firstname) data.doc.firstname="";
+  if (!data.doc.lastname) data.doc.lastname="";
+  if (!data.doc.useractive) data.doc.useractive="";
+  if (!data.doc.authcode) data.doc.authcode="";
+  if (!data.doc.url) data.doc.url="";
+  if (!data.doc.country) data.doc.country="";
+ 
+
+
+   for(var key in data.doc){
+     var val=data.doc[key];
+	 var readonly="";
+	 if ((key=="_id") || (key=="id") || (key=="_rev") || (key=="rev")) readonly="readonly";
+ %>
+ <tr><td width="20%"><%= key %></td><td>
+ <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
+ <input type="text" class="field" name="<%=key%>" id="<%=key%>" value="<%=val%>" <%= readonly %> >
+ </div>
+ </td></tr>
+  <!--<label for="<%=key %>"><%= key %></label><input type="text" name="<%=key%>" id="<%=key%>" value="<%=val%>">-->
+<% } %>
+
+</table>
+<a href="#" class="ui-link ui-btn ui-shadow ui-corner-all" data-role="button" onclick="saveObjectForm()">Save</a>
+<!--</div>-->
+<!--</form>-->

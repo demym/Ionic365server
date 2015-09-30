@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Storage Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        window.localStorage.setItem("key", "value");
+
+ 
+        // keyname is now equal to "key"
+        var value = window.localStorage.getItem("key");
+		alert(value);
+        // value is now equal to "value"
+        window.localStorage.removeItem("key");
+        window.localStorage.setItem("key2", "value2");
+		value = window.localStorage.getItem("key2");
+				alert(value);
+        window.localStorage.clear();
+        // localStorage is now empty
+    }
+
+    </script>
+  </head>
+  <body>
+    <h1>Example</h1>
+    <p>localStorage</p>
+  </body>
+</html>

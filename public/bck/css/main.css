@@ -1,0 +1,100 @@
+.recnum {
+ text-align: center;
+}
+
+ html, body {
+    height : 100%;
+}
+.ui-footer {
+    position: absolute !important;
+    bottom: 0;
+    width: 100%
+}
+
+.ui-listview .ui-li-icon {
+    max-height: 30px;
+    max-width: 30px;
+    top: 50%;
+    /*margin-top: -15px;*/
+}
+
+#lista img {
+position:absolute; 
+    top:0; 
+    bottom:0; 
+    left:0px; 
+    margin:auto; 
+    height:55px; 
+    width:55px;
+}
+
+.panel td {  
+    color: #FFF !important;  
+    /*text-shadow: 0 0 0 rgba(0,0,0,0);  
+    font-size: 14px;  
+    padding: 15px 20px 15px 60px;  
+    display: block;  
+    text-decoration: none;  
+    border-bottom: 1px solid #475657;  
+    border-top: 1px solid #95A5A6;  
+    position: relative;  
+    font-weight: 400;  */
+}  
+
+#infogara {
+ text-align: center;
+}
+.match {
+  font-size: 18px;
+  font-weight: bold;
+  color: #dddddd;
+}
+
+.soft {
+  font-size: 16px;
+  font-weight: normal;
+  color: #dddddd; 
+}
+.result {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffeeff; 
+}
+.atleta {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.green {
+  color: green;
+  font-size: 20px;
+  font-weight: bold;
+}
+.red {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+.gray {
+  color: gray;
+  font-size: 20px;
+  font-weight: normal;
+}
+.black {
+  color: black;
+  font-size: 20px;
+  font-weight: normal;
+  text-decoration: line-through;
+}
+
+.imgicon {
+    position:absolute; 
+    top:0; 
+    bottom:0; 
+    left: 0px; 
+	padding: 10px;
+    margin:auto; 
+    height:45px; 
+    width:45px;
+}

@@ -1,0 +1,12 @@
+<input type="hidden" id="shareid" value="" />
+<% for(var i=0; i<data.length; i++) { %>
+   <li data-icon="false"><a data-mini="true" href="#" class="add-container">
+    <label class="add-container">
+      <input type="checkbox" id="<%= data[i].id%>" value="true" />
+      <label class="lbl_add-container">
+       <%= data[i].doc.lastname+" "+data[i].doc.firstname+" "+data[i].doc.email %>
+      </label>
+	  </a>
+    </label>
+  </li>
+<% } %>

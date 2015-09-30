@@ -1,0 +1,77 @@
+<html>
+<head>
+   <script type='text/javascript' src='js/jquery-1.7.min.js'>//</script>
+   <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.6.0/dojo/dojo.xd.js" type="text/javascript">//</script>
+
+  
+
+    
+
+      
+</head>
+<body >
+  
+<div id="wait">Connecting....</div>  
+<div id="hid" style="display:none">
+  <a style="display: block;" id="ibm-saleschat" class="ibm-chat-link" href="javascript:void(0);" data-repid="anna.scarsi@it.ibm.com" data-prefname="Anna Scarsi" data-stchat-link="true">
+  
+
+
+<span class="ibm-pc-text-chat">Entra in chat con me</span>
+<span style="display:none;" class="ibm-mobile-text-chat">Entra in chat con me</span>
+
+</a>
+
+
+
+
+</div>
+
+
+   <script type="text/javascript">
+    changeRep();
+	
+	   function getQS(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+
+	
+	  function changeRep(){
+   var rep=getQS("rep");
+	console.log("changed to rep: "+rep);
+	$("#ibm-saleschat").attr("data-repid",rep)
+	//alert($("#ibm-saleschat").attr("data-repid"))
+  }
+  
+   
+
+   
+   function loadST(){
+  // var opener =document.referrer;
+  // alert(opener);
+    console.log("loadST")
+	//return;
+	
+	var a=document.getElementById("ibm-saleschat");
+	
+	dojo.byId('ibm-saleschat').click();
+	   
+   //dojo.connect(a, "onclick", fanculo);​​​​​​​​​​​
+	
+	//a.dispatchEvent("click");
+	//$("#ibm-saleschat").trigger("click");
+   }
+
+	
+	window.setTimeout(function(){ loadST(); }, 2000);
+     
+   
+   </script>
+   
+       <script type='text/javascript' src='https://st-ihs.dst.ibm.com/V17/stwebchat/stwebcollabr.js' >//</script>
+
+</body>
+</html>

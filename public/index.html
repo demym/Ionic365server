@@ -1,0 +1,1311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<script src="cordova.js"  onload="javascript:window.isCordovaApp = true;"></script>
+<!--<script src="js/inappbrowser.js" ></script>-->
+ <script type="text/javascript" src="js/moment.min.js"></script>
+<script type='text/javascript' src='js/_loader.js'></script>
+<!--<script src="js/jqm/jquery-1.11.1.min.js"></script>-->
+<script src="js/jqm/jquery.mobile-1.4.4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/dojo/1.6.0/dojo/dojo.xd.js" type="text/javascript">//</script>
+<script type='application/javascript' src='js/fastclick.js'></script>
+<script type="text/javascript" src="js/ejs.js"></script>
+<script src="js/app.js"></script>
+   <!--<script type='text/javascript' src='js/stwebcollabr.js'>//</script> -->
+   <script type='text/javascript' src='https://st-ihs.dst.ibm.com/V17/stwebchat/stwebcollabr.js'>//</script>
+<!--<link href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" rel="stylesheet" />-->
+<!--link href="ios_inspired/styles.css" rel="stylesheet" />-->
+
+<link rel='stylesheet' type='text/css' href='css/jqm-datebox.min.css' />
+ <script type="text/javascript" src="js/jqm-datebox.core.min.js"></script>
+ <script type="text/javascript" src="js/jquery.backstretch.js"></script>
+ <script type="text/javascript" src="js/jquery.form.js"></script>
+ 
+ <script type="text/javascript" src="js/wow.min.js"></script>
+ 
+  <script type="text/javascript" src="js/dino2/freewall.js"></script>
+  <!--<script type="text/javascript" src="js/FileTransfer.js"></script>-->
+  
+  <script type="text/javascript" src="js/modernizr-latest.js"></script>
+    <script type="text/javascript" src="js/socialGap.js"></script>
+    <script type="text/javascript" src="js/socialGap_facebook.js"></script>
+	    <script type="text/javascript" src="js/socialGap_linkedin.js"></script>
+  
+ 
+ <!--<script type="text/javascript" src="js/custom.js"></script>-->
+<!--<script type="text/javascript" src="js/PushNotification.js"></script>
+<script type="text/javascript" src="//cdn.pubnub.com/pubnub-3.7.4.min.js"></script>-->
+
+ <!-- css per home page -->
+    <link rel="stylesheet" href="js/jqm/jquery.mobile-1.4.4.min.css" />
+    <link href="css/dino2/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dino2/font-awesome.min.css" rel="stylesheet">
+   <!-- <link href="css/dino2/main.css" rel="stylesheet">-->
+    <link href="css/dino2/responsive.css" rel="stylesheet">
+    <link href="css/dino2/dedicated.css" rel="stylesheet">
+	<link href="css/dino2/styleTryBuy.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dino2/styleFreeWall.css" />
+
+	<link rel="stylesheet" href="css/listview-grid.css">
+	 <link rel="stylesheet" type="text/css" href="css/tut01.css" />
+
+	 <meta content=“dino_ravasi@it.ibm.com" name="RepID"/>
+
+ <!-- fine css per homepage -->
+<!--[[
+<link rel='stylesheet' type='text/css' href='css/jqm-datebox.min.css' />
+<link rel='stylesheet' type='text/css' href='../fullcalendar/fullcalendar.print.css' media='print' />
+<script type='text/javascript' src='../jquery/jquery.js'></script>
+<script type='text/javascript' src='../jquery/jquery-ui.js'></script>
+<script type='text/javascript' src='../fullcalendar/fullcalendar.min.js'></script>
+]]-->
+
+</head>
+<body onload="init()">
+
+
+ <div data-role="page" id="login" data-theme="a">
+       <div data-role="header" class="ui-content" data-theme="b">
+	   <h3>Digital Collaboration Hub</h3>
+			<!--<table><tr><td>
+			  <img src="img/ibm_launcher.gif" width='40' height='13' /></td><td align="center">Generali</td></tr></table>-->
+		</div>
+		<!--<a onclick="SocialGap.Linkedin_PerformLogon(ldLogonSuccess, ldLogonFailure);">Logon with LinkedIn</a>
+		<a onclick="SocialGap.Facebook_PerformLogon(ldLogonSuccess, ldLogonFailure);">Logon with Facebook</a>-->
+        <div role="main" class="ui-content">
+		        <br>
+	            <h2 class="mc-text-center">Welcome to IBM Digital Collaboration Hub</h2>
+	            <p class="mc-top-margin-1-5"><b>Existing Users</b></p>
+	            <a href="#" onclick="showLoginPage()" class="ui-btn ui-btn-b ui-corner-all">Sign In</a>
+				<br><br>
+	            <p class="mc-top-margin-1-5"><b>Don't have an account?</b></p>
+	            <a href="#signup" class="ui-btn ui-btn-b ui-corner-all">Register account</a>
+	            <p></p>
+     </div><!-- /content -->
+	 <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" class="mango" >		
+	<img class="footimage" src="img/bluemix.png"/>
+</div>
+	
+    </div><!-- /page -->
+
+	
+	 <div data-role="page" id="login2">
+        <div data-role="header" data-theme="c">
+	            <h1>Login</h1>
+	        </div><!-- /header -->
+	        <div role="main" class="ui-content">
+	           <h3>&nbsp;</h3>
+	            <label for="txt-email">Email Address</label>
+	            <input type="text" name="txt-email" id="txt-email" value="">
+	            <label for="txt-password">Password</label>
+	            <input type="password" name="txt-password" id="txt-password" value="">
+	            <fieldset data-role="controlgroup">
+	                <input type="checkbox" name="chck-rememberme" id="chck-rememberme" checked="">
+	                <label for="chck-rememberme">Remember me</label>
+	            </fieldset>
+	            <a href="#" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit"  onclick="doLogin()" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Login</a>
+	            <p class="mc-top-margin-1-5"><a href="begin-password-reset.html">Can't access your account?</a></p>
+	            <div data-role="popup" id="dlg-invalid-credentials" data-dismissible="false" style="max-width:400px;">
+	                <div role="main" class="ui-content" style="padding: 14px">
+	                    <h3 class="mc-text-danger">Login Failed</h3>
+	                    <p>Did you enter the right credentials?</p>
+	                    <div class="mc-text-center"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">OK</a></div>
+	                </div>
+	            </div>
+	        </div><!-- /content -->
+				 <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" class="mango" >		
+	<img class="footimage" src="img/bluemix.png"/>
+</div>
+	    </div><!-- /page -->
+		
+		
+		<div data-role="page" id="signup">
+    <div data-role="header" data-theme="c">
+        <h1>Signup</h1>
+    </div><!-- /header -->
+    <div role="main" class="ui-content">
+        <h3>Sign Up</h3>
+        <label for="txt-first-name">First Name</label>
+        <input type="text" name="txt-first-name" id="txt-first-name" value="">
+        <label for="txt-last-name">Last Name</label>
+        <input type="text" name="txt-last-name" id="txt-last-name" value="">
+        <label for="txt-email">Email Address</label>
+        <input type="text" name="txt-email" id="txt-email" value="">
+        <label for="txt-password">Password</label>
+        <input type="password" name="txt-password" id="txt-password" value="">
+        <label for="txt-password-confirm">Confirm Password</label>
+        <input type="password" name="txt-password-confirm" id="txt-password-confirm" value="">
+        <a href="#" onclick="doSignup()" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Submit</a>
+        <div data-role="popup" id="dlg-sign-up-sent" data-dismissible="false" style="max-width:400px;">
+            <div data-role="header">
+                <h1>Almost done...</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <h3>Confirm Your Email Address</h3>
+                <p>We sent you an email with instructions on how to confirm your email address. Please check your inbox and follow the instructions in the email.</p>
+                <div class="mc-text-center"><a href="sign-in.html" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">OK</a></div>
+                    
+            </div>
+        </div>
+    </div><!-- /content -->
+</div><!-- /page -->
+
+
+
+
+
+<div data-role="page" id="index" data-theme="a" >
+
+<div data-role="content" id="index_content" >
+<div id="accountPanel" data-role="panel" data-theme="b" data-display="overlay" data-transition="slide" data-position="right">
+   <ul data-role="listview"  class="ui-listview" id="ulaccountpanel" >
+	<li><span class="smallslim bold" style="color: lightblue;" id="useremail"></span></li>
+	<li><span class="smallslim" style="color: lightblue;" id="username"></span></li>
+	<li><span class="smallslim" style="color: lightblue;" id="userrole"></span></li>
+	<li><span class="smallslim" style="color: lightblue;" id="usercompany"></span></li>
+	<li data-icon="false"><a href="#" data-icon="false" class="slinkCALENDAR" onclick="changePassword()"><span class="smallslim">Change password</span></a></li>
+	<li data-icon="false"><a href="#" data-icon="false" class="slinkCALENDAR" onclick="socialLogin()"><span class="smallslim">Social login</span></a></li>
+	<li data-icon="false"><a href="#" class="slinkREACHME" onclick="doLogout()"><span class="smallslim">Log Out</span></a></li>
+	<li data-icon="false"><a href="#" class="slinkREACHME" onclick="exitapp()"><span class="smallslim">Exit app</span></a></li>
+	</ul>  	
+</div>	
+	
+
+            <div class="row">
+		<style type="text/css">
+			.layout-homepage {
+				position: absolute;
+				right: 0px;
+				left: 0px;
+				top: 0px;
+				bottom: 0px;
+				padding: 15px;
+				overflow: hidden;
+			}
+			.header {
+				height: 100%;
+			}
+			.free-wall-homepage {
+				width: 100%;
+				height: 100%;
+			}
+
+			@keyframes start {
+				from { transform: scale(0);	}
+				to { transform: scale(1);}
+			}
+
+			@-webkit-keyframes start {
+				from { -webkit-transform: scale(0);	}
+				to { -webkit-transform: scale(1); }
+			}
+
+			.free-wall-homepage .brick[data-state="init"] {
+				display: none;
+			}
+
+			.free-wall-homepage .brick[data-state="start"]  {
+				display: block;
+				animation: start 0.5s;
+				-webkit-animation: start 0.5s;
+			}
+
+			.free-wall-homepage .brick[data-state="move"]  {
+				transition: top 0.5s, left 0.5s, width 0.5s, height 0.5s;
+				-webkit-transition: top 0.5s, left 0.5s, width 0.5s, height 0.5s;
+			}
+		</style> 
+
+		<div class="layout layout-homepage">
+			<div id="freewall-homepage" class="free-wall free-wall-homepage"></div>
+		</div> 
+
+            </div>   
+		<script type="text/javascript">
+			var temp = "<div class='brick' style='width:{width}px; height: {height}px; background-color: {color}'><div class='cover'>{BodyDiv}</div></div>";
+			var colour = [
+				"rgb(142, 68, 173)",
+				"rgb(243, 156, 18)",
+				"rgb(211, 84, 0)",
+				"rgb(0, 106, 63)",
+				"rgb(204, 255, 0)",
+				"rgb(192, 57, 43)",
+				"rgb(135, 0, 0)",
+				"rgb(142, 68, 173)"
+			];
+			
+			var contenutobox = [
+				"<h1>Digital Collaboration Hub</h1><br><h2 id='welcome'>Welcome</h2><br><h2> to a new social way to communicate with IBM</h2>",
+				"<div class='feature-wrap circle TestoIconFreeWallNone' onclick='gotoCalendar()'><i class='fa fa-calendar-o'></i><h1>Planning</h1><br /><h2>Meetings, Events, Agenda</h2></div>",
+				"<div class='feature-wrap circle TestoIconFreeWallLeft' onclick='gotoReachMe()'><i class='fa fa-street-view'></i><br><h1>Reach me</h1><br /><h2>Anywhere, Anyway, Anytime</h2></div>",
+				"<div class='feature-wrap circle TestoIconFreeWallNone' onclick='gotoElib()'><i class='fa fa-book'></i><h1>e-library</h1><br /><h2>Send, Get, Share</h2></div>",
+				"<div class='feature-wrap circle TestoIconFreeWallLeft' onclick='gotoSocial()'><i class='fa fa-comments-o'></i><h1>Social</h1><br /><h2>Feel the World</h2><br><img src='img/social/LinkedinSquare.png' border='0' class='social'><img src='img/social/TwitterSquare.png' border='0' class='social'><img src='img/social/GoogleplusSquare.png' border='0' class='social'></div>",
+				"<div class='feature-wrap circle TestoIconFreeWallLeft' onclick='gotoTryAndBuy()'><i class='fa fa-life-ring'></i><h1>Try & Buy</h1><br /><h2>Now for free</h2></div>",
+				"<div class='feature-wrap circle TestoIconFreeWallLeft' onclick='gotoTools()'><i class='fa fa-puzzle-piece'></i><h1>Tools</h1><br /><h2>Additional capabilities</h2></div>",
+				"<div class='feature-wrap circle TestoIconFreeWallNone' onclick=''><a id='btnAccount' href='#accountPanel' data-icon='user'><i class='fa fa-user'></i><br><h1>Account</h1></a><br /><h3>User Management</h3><br><br><h3 id='homeusername'></h3><br><h3  id='homerole'></h3></div>",
+				"<hr><h5><a href='http://www.ibm.com/privacy/it/it/'>Privacy</a></h5><hr><h5><a href='http://www.ibm.com/legal/it/it/'>Condizioni Utilizzo</a></h5><hr>",
+				"<div class='madewithIBM'><h5><a href=javascript:window.open('http://www.ibm.com/smarterplanet/it/it/madewithibm/','_system') >Guarda →</a></h5></div>"
+			];
+			
+			
+			
+			var colorfix = [
+				"rgb(142, 68, 173)",
+				"rgb(255, 153, 0)",
+				"rgb(41, 128, 185)",
+				"rgb(255, 0, 153)",
+				"rgb(0, 255, 102)",
+				"rgb(0, 201, 255)",
+				"rgb(227, 45, 45)",
+				"rgb(39, 174, 96)",
+				"rgb(204, 255, 0)",
+				"rgb(0, 106, 63)",
+				"rgb(39, 174, 96)"
+			];
+			var w = 1, h = 1, html = '', color = '', limitItem = 10;
+
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "450").replace("{color}", colorfix[0]).replace("{BodyDiv}",contenutobox[0]);
+html += temp.replace(/\{height\}/g, "300").replace(/\{width\}/g, "300").replace("{color}", colorfix[1]).replace("{BodyDiv}",contenutobox[1]);
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "450").replace("{color}", colorfix[2]).replace("{BodyDiv}",contenutobox[2]);
+html += temp.replace(/\{height\}/g, "300").replace(/\{width\}/g, "150").replace("{color}", colorfix[3]).replace("{BodyDiv}",contenutobox[3]);
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "300").replace("{color}", colorfix[4]).replace("{BodyDiv}",contenutobox[4]);
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "450").replace("{color}", colorfix[5]).replace("{BodyDiv}",contenutobox[5]);
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "300").replace("{color}", colorfix[6]).replace("{BodyDiv}",contenutobox[6]);
+
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "150").replace("background-color: {color}","background: url(img/logo/madewithIBM2.png); background-size:contain").replace("{BodyDiv}",contenutobox[9]);
+
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "150").replace("{color}", colorfix[9]).replace("{BodyDiv}",contenutobox[8]);
+
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "300").replace("{color}", colorfix[7]).replace("{BodyDiv}",contenutobox[7]);
+html += temp.replace(/\{height\}/g, "150").replace(/\{width\}/g, "150").replace("background-color: {color}","background: url(img/logo/madewithIBM4.png); background-size:contain").replace("{BodyDiv}"," ");
+
+/*
+color = colour[colour.length * Math.random() << 0];
+html += temp.replace(/\{height\}/g, 150).replace(/\{width\}/g, 150).replace("{color}", color).replace("{BodyDiv}","");
+h = 1 + 3 * Math.random() << 0;
+w = 1 + 3 * Math.random() << 0;
+
+			
+			for (var i = 7; i < limitItem; ++i) {
+				h = 1 + 3 * Math.random() << 0;
+				w = 1 + 3 * Math.random() << 0;
+				color = colour[colour.length * Math.random() << 0];
+
+				html += temp.replace(/\{height\}/g, h*150).replace(/\{width\}/g, w*150).replace("{color}", color).replace("{BodyDiv}","");
+			}
+*/
+			//$("#freewall").html(html);
+			$("#freewall-homepage").html(html); 
+			
+
+			$(function() {
+			var wall = new Freewall("#freewall-homepage"); 
+				//var wall = new Freewall("#freewall");
+				wall.reset({
+					selector: '.brick',
+					animate: false,
+					cellW: 160,
+					cellH: 160,
+					delay: 30,
+					onResize: function() {
+						wall.refresh($(window).width() - 30, $(window).height() - 30);
+					}
+				});
+				// caculator width and height for IE7;
+				wall.fitZone($(window).width() - 30 , $(window).height() - 30);
+			});
+			
+			
+		</script>		
+			
+	</div>
+	
+	
+</div>
+
+
+  <div data-url="demo-page" data-role="page" data-theme="a" id="indexcialda" >
+    <div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<h3>DIGITAL COLLABORATION HUB </h3>
+	<a id="btnAccount" data-role="button" href="#accountPanel" data-icon="user" data-theme="b" data-iconpos="right" class="ui-btn-right">&nbsp;</a>
+	</div>
+
+	<div data-role="content">
+		<div id="accountPanel" data-role="panel" data-theme="b" data-display="overlay" data-transition="slide" data-position="right">
+  
+	</div>
+	
+    <div role="main" class="ui-content my-page">
+		
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#" onclick="gotoCalendar()">
+                <img src="img/pgmp.png" class="ui-li-thumb">
+                <h2></h2>
+                <p></p>
+                <p class="ui-li-aside">eSolution</p>
+            </a></li>
+            <li><a href="#" onclick="gotoReachme()">
+                <img src="img/wams.png" class="ui-li-thumb">
+                <h2>WAMS</h2>
+                <p></p>
+                <p class="ui-li-aside">eSolution</p>
+            </a></li>
+            <li><a href="#" onclick="gotoElib()">
+                <img src="img/esal.png" class="ui-li-thumb">
+                <h2>eSal</h2>
+                <p>eSal helps you and IBM to share and approve your billing reports</p>
+                <p class="ui-li-aside">eSolution</p>
+            </a></li>
+            <li><a href="#">
+                <img src="img/b2b.png" class="ui-li-thumb">
+                <h2>&nbsp;</h2>
+                <p>Easily connect with IBM</p>
+                <p class="ui-li-aside">Capabilities</p>
+            </a></li>
+            
+        </ul>
+    </div><!-- /content -->
+	</div>
+	<div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" class="mango" >		
+	<img class="footimage" src="img/bluemix.png"/>
+</div>
+</div>
+
+
+
+<div data-role="page" id="indexvecchia" class="sfondo" data-theme="a"   >
+
+
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<h3>DIGITAL COLLABORATION HUB </h3>
+	<a id="btnAccount" data-role="button" href="#accountPanel" data-icon="user" data-theme="b" data-iconpos="right" class="ui-btn-right">&nbsp;</a>
+	</div>
+	<div data-role="content" id="index_content" >
+	<div id="accountPanel" data-role="panel" data-theme="b" data-display="overlay" data-transition="slide" data-position="right">
+ 
+</div>	
+	 <section id="feature" >
+        <div class="container">
+            <div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap circle TestoIconP" onclick="gotoCalendar()">
+                            <i class="fa fa-calendar-o"></i>
+                            <h2>Planning</h2>
+                            <h3>Meetings, Events, Agenda</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap circle TestoIconR" onclick="gotoReachMe()">
+                            <i class="fa fa-users"></i>
+                            <h2>Reach Me</h2>
+                            <h3>Anywhere, Anytime, Anyhow</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap circle TestoIconE" onclick="gotoElib()">
+                            <i class="fa fa-book"></i>
+                            <h2>e-Library</h2>
+                            <h3>Store, Read, Share</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap circle TestoIconS">
+                            <i class="fa fa-mobile-phone"></i>
+                            <h2>Social</h2>
+                            <h3>xxxxxx xxxxxxxxx<br>xxxxxxxxx</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap circle TestoIconT" onclick="gotoTryAndBuy()">
+                            <i class="fa fa-life-ring"></i>
+                            <h2>Try & Buy</h2>
+                            <h3>xxxxxx xxxxxxxxx<br>xxxxxxxxx</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+
+                        <div class="feature-wrap circle TestoIconO">
+                            <i class="fa fa-puzzle-piece"></i>
+                            <h2>Others</h2>
+                            <h3>xxxxxx xxxxxxxxx<br>xxxxxxxxx</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+                </div><!--/.services-->
+            </div><!--/.row-->    
+        </div><!--/.container-->
+    </section><!--/#feature-->
+	
+	
+ 
+	
+	
+	</div>
+	
+	
+	
+	
+	
+	<!-- vecchio content -->
+
+<div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" class="mango" >		
+	<img class="footimage" src="img/bluemix.png"/>
+</div>
+<!-- /footer -->
+</div>
+
+
+
+<div data-role="page" id="index_old" class="sfondo" data-theme="a"   >
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<h3>DIGITAL COLLABORATION HUB </h3>
+	<a id="btnAccount" data-role="button" href="#accountPanel" data-icon="user" data-theme="b" data-iconpos="right" class="ui-btn-right">&nbsp;</a>
+	</div>
+	<div data-role="content" id="index_content" >
+	<div id="accountPanel" data-role="panel" data-theme="b" data-display="overlay" data-transition="slide" data-position="right">
+  
+</div>	
+	 <div class="sui-grid-b sui-responsive indexgrid">
+    <div class="sui-block-a"><input data-icon="calendar" value="Planner" type="button" onclick="gotoCalendar()"></div>
+    <div class="sui-block-b"><input data-icon="cloud" value="Elibrary" type="button"  onclick="gotoElib()"></div>
+    <div class="sui-block-c"><input data-icon="user" sdata-iconpos="right" value="Reach Me" type="button"  onclick="gotoReachMe()"></div>
+	<div class="sui-block-c"><input data-icon="heart" sdata-iconpos="right" value="Sentiment" type="button"></div>
+	<div class="sui-block-c"><input data-icon="tag" sdata-iconpos="right" value="Try and Buy" type="button"  onclick="gotoTryAndBuy()"></div>
+	<div class="sui-block-c"><input data-icon="gear" sdata-iconpos="right" value="Tools" type="button"></div>
+	<div class="sui-block-c"><input data-icon="gear" sdata-iconpos="right" value="Exit" onclick="exitapp()" type="button"></div>
+</div>
+    </div>
+	<div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" class="mango" >		
+	<img class="footimage" src="img/bluemix.png"/>
+    </div>
+</div>	
+
+
+<div data-role="page" id="reachme" data-theme="a" >
+<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="b">
+ <a id="btnBack" data-role="button" href="#menuPanel" data-icon="bars" data-iconpos="left" class="ui-btn-left" data-theme="b">&nbsp;</a>
+	<h3>Reach me</h3>
+	<!--<a id="btnCalendarView" data-role="button" href="#calPanel" data-icon="eye" data-iconpos="right" class="ui-btn-right">&nbsp;</a>-->
+</div>
+	
+	<div data-role="content">
+
+	<div class="row">
+	<div class="col-md-12">
+	<h2>Reach Me</h2>
+                            <h4>Anywhere, Anyway, Anytime</h3>
+	</div>
+	</div>
+	<!-- Pagina Contatti -->
+
+
+            <div class="row rowDigital">
+                <div class="contactlist">
+				
+					<div id="FrancescoStronati" class="col-md-3 col-sm-6 boxmember">
+							<img class="img-circle" src="img/contatti/FrancescoStronati.jpg" alt="Francesco Stronati">
+							<h3 class="name">Francesco Stronati</h3>
+							<h4 class="name">Managing Director<br />Generali Group</h4>
+							<div class="phone"><span class="fa fa-phone"> </span> +39 02.59627230</div>
+							<div class="phone"><span class="fa fa-mobile"> </span> +39 335.7129100</div>
+							<div class="email"><a class='btn btn-info' data-rel="external"  href="mailto:stronati@it.ibm.com"><span class="fa fa-envelope"> </span>e-mail me</a></div>
+                    </div>
+				
+					<div id="GiancarloPresutti" class="col-md-3 col-sm-6 boxmember">
+							<img class="img-circle" src="img/contatti/GiancarloPresutti.jpg" alt="Giancarlo Presutti">
+							<h3 class="name">Giancarlo Presutti</h3>
+							<h4 class="name">Client Unit Executive<br />Generali Group</h4>
+							<div class="phone"><span class="fa fa-phone"> </span> +39 02.59627312</div>
+							<div class="phone"><span class="fa fa-mobile"> </span> +39-335.5693661</div>
+							<div class="email"><br><a class='btn btn-info' data-rel="external" href="mailto:PRESUTTI@it.ibm.com"><span class="fa fa-envelope"> </span>e-mail me</a></div>
+                    </div>
+
+					<div id="MaddalenaPugliese" class="col-md-3 col-sm-6 boxmember">
+					<img src="img/contatti/DigitalSales.png" class="DigitalPeople">
+
+					
+							<img class="img-circle" src="img/contatti/MaddalenaPugliese.jpg" alt="Maddalena Pugliese">
+							<h3 class="name">Maddalena Pugliese</h4>
+							<h4 class="name">Digital Client Representative<br />Generali Group</h3>
+							<div class="phone"><span class="fa fa-phone"> </span> +39 02.70335052</div>
+							<div class="mobile"><span class="fa fa-mobile"> </span> +39-335.1432998</div>
+							<div class="email"><a class='btn btn-info' data-rel="external" href="mailto:maddy_pugliese@it.ibm.com"><span class="fa fa-envelope"> </span>e-mail me</a></div>
+                    </div>
+
+                    <div id="AndreaRufo" class="col-md-3 col-sm-6 boxmember" >
+<img src="img/contatti/DigitalSales.png" class="DigitalPeople">
+<a href="#" title="Andrea Rufo" data-toggle="popoverDinoRavasi" data-trigger="focus" data-content="Grazie per aver deciso di contattarmi"><img class="img-circle" src="img/contatti/AndreaRufo.jpg" alt="Andrea Rufo">
+</a>
+<h3 class="name">Andrea Rufo</h4>
+<h4 class="name">>Digital Sales Manager, IA Industry & Enterprise</h3>
+<div class="phone"><a href="tel:+390259623203"><span class="fa fa-phone"> </span> +39 0259623203</a></div>
+<div class="phone"><span class="fa fa-mobile"> </span> +39 3351988986</div>
+<div class="email"><a class='btn btn-info' data-rel="external"  href="mailto:andrea_rufo@it.ibm.com"><span class="fa fa-envelope"> </span>e-mail me</a></div>
+                    </div><!--/.col-md-4-->
+				
+                    <div id="DinoRavasi" class="col-md-3 col-sm-6 boxmember" >
+<img src="img/contatti/DigitalSales.png" class="DigitalPeople">
+<a href="#" title="Dino Ravasi" data-toggle="popoverDinoRavasi" data-trigger="focus" data-content="Grazie per aver deciso di contattarmi">
+	<img class="img-circle" src="img/contatti/DinoRavasi.jpg" alt="Dino Ravasi">
+</a>
+<h3 class="name">Dino Ravasi</h3>
+<h4 class="name">Private Commerce Digital Sales Representative</h4>
+
+		<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+<div id="SkypeButton_Call_dinoravasi_1">
+  <script type="text/javascript">
+    Skype.ui({
+      "name": "dropdown",
+      "element": "SkypeButton_Call_dinoravasi_1",
+      "participants": ["dinoravasi"]
+    });
+  </script>
+</div>
+		<div class="phone"><a href="tel:+390270335053"><span class="fa fa-phone"> </span> +39.0270335053</a></div>
+		<div class="phone"><span class="fa fa-mobile"> </span> +39-335.5999561</div>
+		<div class="email"><a class='btn btn-info' data-rel="external" href="mailto:dino_ravasi@it.ibm.com"><span class="fa fa-envelope"> </span>e-mail me</a></div>
+
+
+                    </div><!--/.col-md-4-->
+
+					<div id="LeleTurati" class="col-md-3 col-sm-6 boxmember" >
+<img src="img/contatti/DigitalSales.png" class="DigitalPeople">
+<a href="#" title="Lele Turati" data-toggle="popoverDinoRavasi" data-trigger="focus" data-content="Grazie per aver deciso di contattarmi">
+	<img class="img-circle" src="img/contatti/LeleTurati.jpg" alt="Lele Turati">
+</a>
+<h3 class="name">Pietro Turati</h3>
+<h4 class="name">Private Commerce Digital Sales<br> Manager</h4>
+<div class="phone"><a href="tel:+390270335053"><span class="fa fa-phone"> </span> +39.02.70335053</a></div>
+<div class="phone"><span class="fa fa-mobile"> </span> +39-335.5999561</div>
+<div class="email"><a class='btn btn-info' data-rel="external" href="mailto:dino_ravasi@it.ibm.com"><span class="fa fa-envelope"> </span>e-mail me</a></div>
+                    </div><!--/.col-md-4-->
+			
+					
+
+                    </div><!--/.col-md-4-->
+
+            </div><!--/.row-->    
+		
+	<!-- Fine Contatti -->
+	</div>
+
+
+	
+	
+	<a href="javascript:window.open('http://st-ihs.dst.ibm.com/V17/UAT/stwebchat/NewV17chatWindow.html?&cc=it&lc=it&singleContact=true&opener=http%3A%2F%2Fwww.ibm.com','_blank');">prova</a>
+	
+
+   <a id="sametime" id="ibm-saleschat" data-repid="dino_ravasi@it.ibm.com" class="ibm-chat-link" href="javascript:void(0);">Text/Video chat</a> 
+	
+</div>
+
+<div data-role="page" id="trybuy" data-theme="a" >
+<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="b">
+ <a id="btnBack" data-role="button" href="#menuPanel" data-icon="bars" data-iconpos="left" class="ui-btn-left" data-theme="b">&nbsp;</a>
+	<h3>Try & Buy</h3>
+	<!--<a id="btnCalendarView" data-role="button" href="#calPanel" data-icon="eye" data-iconpos="right" class="ui-btn-right">&nbsp;</a>-->
+</div>
+	<div data-role="content">
+		<style type="text/css">
+		
+			.layout {
+				padding: 15px;
+			}
+
+			.free-wall {
+			}
+			.brick {
+				width: 221px;
+			}
+			
+			.filter-items {
+				padding: 10px 0px;
+				margin-top: 30px;
+			}
+
+		</style>
+	<!-- Pagina Try & Buy -->
+		<div class="layout">
+			<div class="filter-items">
+				<div class="filter-label filter-labelTB" >All</div>
+				<div class="filter-label filter-labelTB btn-Analytics active" data-filter=".Analytics">Analytics and Big Data</div>
+				<div class="filter-label filter-labelTB btn-Messaging" data-filter=".Messaging">Messaging</div>
+				<div class="filter-label filter-labelTB btn-InternetThings" data-filter=".InternetThings">Internet of Things</div>
+				<div class="filter-label filter-labelTB btn-BusinessSupport" data-filter=".BusinessSupport">Business Support</div>
+				<div class="filter-label filter-labelTB btn-DevOps" data-filter=".DevOps">DevOps</div>
+			</div>
+			<div id="freewallTryBuy" class="free-wall"></div>
+		</div>
+	<!-- Fine Try & Buy -->
+	</div>
+<style>
+
+@font-face {
+	font-family: 'LubalinforIBM-Demi';
+	src: url('fonts/LubalinforIBM-Demi.eot');
+	src: local('☺'), url('fonts/LubalinforIBM-Demi.woff') format('woff'), url('fonts/LubalinforIBM-Demi.ttf') format('truetype'), url('fonts/LubalinforIBM-Demi.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.tile .industry-label {
+    font-family: 'LubalinGraphStdBookIBM',Helvetica,sans-serif;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+
+	
+	
+.familyfiltro{
+    font-family: 'LubalinGraphStdBookIBM',Helvetica,sans-serif;
+    font-size: 14px;
+	color: #fff;
+	height: 45px;
+}
+.imagefiltro{
+	background-color: #fff;
+}
+.bodyfiltro{
+	background-color: #fff;
+	padding-top: 20px;
+}
+.linkfiltro{
+	background-color: #fff;
+}
+
+.btn-DevOps{background: rgb(39, 174, 96);}
+.btn-BusinessSupport{background: rgb(243, 156, 18);}
+.btn-InternetThings{background: rgb(41, 128, 185);}
+.btn-Messaging{background: rgb(192, 57, 43);}
+.btn-Analytics{background: rgb(0, 106, 63);} 
+
+</style>
+
+			<script type="text/javascript">
+			var tempOLD = "<div class='brick {familyfilter} {additionalstyle}' ><div class='cover'>{description}</div></div>";
+			var temp = "<div class='brick {familyfilter} {additionalstyle}' >{description}</div>";
+			var descrizione = ["Analytics", "Messaging", "InternetThings", "BusinessSupport", "DevOps"];
+			var colour = [
+				"rgb(142, 68, 173)",
+				"rgb(211, 84, 0)",
+				"rgb(0, 106, 63)", /* Analytics and Big Data */
+				"rgb(135, 0, 0)", 
+				"rgb(39, 174, 96)", /* Dev Ops */
+				"rgb(192, 57, 43)", /* Messaging */
+				"rgb(41, 128, 185)", /* InternetThings */
+				"rgb(243, 156, 18)" /*BusinessSupport*/
+			];
+			var html = '', size = '', color = '', limitItem = 24;
+
+/* Internet of Things */		
+var category1Title = ["IBM Internet of Things Foundation"];
+var category1URL = ["http://www.ibm.com/marketplace/cloud/internet-of-things/us/en-us"];
+var category1image = ["http://www.ibm.com/wcsstore/SCWExtendedSitesCatalogAssetStore/CloudMarketplace/ibm_files/ibm_files_646x1000/it.svg"];	
+
+/* Business Support */			
+var category2Title = [
+		"Calcative Cloud Portal",
+		"IBM Intelligent Operations Center for Cloud",
+		"Ustream"
+	];
+var category2URL = [
+		"https://marketplace.ibmcloud.com/apps/3346#!overview",
+		"http://www.ibm.com/marketplace/cloud/city-insights/us/en-us",
+		"https://marketplace.ibmcloud.com/apps/778#!overview"
+	];
+var category2image = [
+		"img/trybuy/IBMCalcativeCloudPortal.png",
+		"img/trybuy/IBMIntelligentOperationsCenterForCloud.jpg",
+		"img/trybuy/Ustream.png"
+	];
+
+
+ /* Messaging */
+ var category3Title = ["IBM Connections Docs Cloud"];
+ var category3URL = ["http://www.ibm.com/marketplace/cloud/online-document-editor/us/en-us"];
+ var category3image = ["img/trybuy/IBMConnectionsDocsCloud.png"];
+		
+	
+
+ /* Dev Ops */
+ var category4Title = ["IBM MobileFirst Quality Assurance"];
+ var category4URL = ["http://www.ibm.com/marketplace/cloud/online-document-editor/us/en-us"];
+ var category4image = ["img/trybuy/IBMMobileFirstQualityAssurance.png"];
+ 
+/* Analytics and Big Data */			
+var category5Title = [
+	"IBM Navigator",
+	"IBM Connections Cloud S1",
+	"IBM Business Intelligence on Cloud",
+	"IBM Case Manager on Cloud",
+	"IBM Intelligent Operations Center for Cloud",
+	"Redis Cloud",
+	"Memcached Cloud",
+	"Memcached Cloud - SoftLayer",
+	"IBM Connections Meetings Cloud",
+	"IBM Connections Social Cloud",
+	"Kiuwan",
+	"Rocket Servergraph Professional - Starter pack - 50 backup clients"
+	];
+var category5URL = [
+	"http://www.ibm.com/marketplace/cloud/enterprise-content-management/us/en-us",
+	"http://www.ibm.com/marketplace/cloud/enterprise-social-collaboration/us/en-us",
+	"http://www.ibm.com/marketplace/cloud/business-intelligence/us/en-us",
+	"http://www.ibm.com/marketplace/cloud/advanced-case-management/us/en-us",
+	"http://www.ibm.com/marketplace/cloud/city-insights/us/en-us",
+	"https://marketplace.ibmcloud.com/apps/673#!overview",
+	"https://marketplace.ibmcloud.com/apps/637#!overview",
+	"https://marketplace.ibmcloud.com/apps/676#!overview",
+	"http://www.ibm.com/marketplace/cloud/online-meetings/us/en-us",
+	"http://www.ibm.com/marketplace/cloud/Business-Social-Networking-on-IBM-Cloud/us/en-us",
+	"https://marketplace.ibmcloud.com/apps/1780#!overview",
+	"https://marketplace.ibmcloud.com/apps/3450#!overview"
+	];
+var category5image = [
+		"img/trybuy/ecm_navoncloud_screenshot.png",
+		"img/trybuy/enterprise-social-collaboration.png",
+		"img/trybuy/IBMBusinessIntelligenceonCloud.jpg",
+		"img/trybuy/IBMCaseManagerOnCloud.png",
+		"img/trybuy/IBMIntelligentOperationsCenterForCloud.jpg",
+		"img/trybuy/RedisCloud.png",
+		"img/trybuy/MemcachedCloud.png",
+		"img/trybuy/MemcachedCloudSoftLayer.png",
+		"img/trybuy/IBMConnectionsMeetingsCloud.png",
+		"img/trybuy/IBMConnectionsSocialCloud.png",
+		"img/trybuy/Kiuwan.png",
+		"img/trybuy/RocketServergraphProfessional.png"
+	];
+ 
+			color = colour[3];
+			descr = descrizione[0];
+			csstemp= descr+"CSS"
+			bodydescr ="<div class='imagefiltro'>{imgprodotto}"+"</div><div class='bodyfiltro'>"+"{nomeprodotto}"+"</div><div class='linkfiltro'><a class='btn btn-info' href='{linkprodotto}'>Try now</a><br/><br/></div>";
+			coloreback = "#fff";
+			for	(index = 0; index < category5Title.length; index++) {
+				descrtemp = "<div class='familyfiltro'>"+descr+"</div>"+bodydescr.replace("{imgprodotto}", "<img src='"+category5image[index]+"' border='0' style='width:100%'>")
+				descrtemp = descrtemp.replace("{nomeprodotto}", category5Title[index]).replace("{linkprodotto}", category5URL[index]);
+				html += temp.replace(/\{size\}/g, size).replace("{color}", color).replace("{description}", descrtemp).replace("{familyfilter}", descr).replace("{additionalstyle}", csstemp);
+			}	
+
+			color = colour[5];
+			descr = descrizione[4];
+			csstemp= descr+"CSS"
+			bodydescr ="<div class='imagefiltro'>{imgprodotto}"+"</div><div class='bodyfiltro'>"+"{nomeprodotto}"+"</div><div class='linkfiltro'><a class='btn btn-info' href='{linkprodotto}'>Try now</a><br/><br/></div>";
+			coloreback = "#fff";
+			for	(index = 0; index < category3Title.length; index++) {
+				descrtemp = "<div class='familyfiltro'>"+descr+"</div>"+bodydescr.replace("{imgprodotto}", "<img src='"+category3image[index]+"' border='0' style='width:100%'>")
+				descrtemp = descrtemp.replace("{nomeprodotto}", category3Title[index]).replace("{linkprodotto}", category3URL[index]);
+				html += temp.replace(/\{size\}/g, size).replace("{color}", color).replace("{description}", descrtemp).replace("{familyfilter}", descr).replace("{additionalstyle}", csstemp);
+			}
+
+			color = colour[6];
+			descr = descrizione[2];
+			csstemp= descr+"CSS"
+			bodydescr ="<div class='imagefiltro'>{imgprodotto}"+"</div><div class='bodyfiltro'>"+"{nomeprodotto}"+"</div><div class='linkfiltro'><a class='btn btn-info' href='{linkprodotto}'>Try now</a><br/><br/></div>";			
+			coloreback = "#fff";
+			for	(index = 0; index < category1Title.length; index++) {
+			descrtemp = "<div class='familyfiltro'>"+descr+"</div>"+bodydescr.replace("{imgprodotto}", "<img src='"+category1image[index]+"' border='0' style='width:100%'>")
+				descrtemp = descrtemp.replace("{nomeprodotto}", category1Title[index]).replace("{linkprodotto}", category1URL[index]);
+				html += temp.replace(/\{size\}/g, size).replace("{color}", color).replace("{description}", descrtemp).replace("{familyfilter}", descr).replace("{additionalstyle}", csstemp);
+			}
+			
+			color = colour[7];
+			descr = descrizione[3];
+			csstemp= descr+"CSS"
+			bodydescr ="<div class='imagefiltro'>{imgprodotto}"+"</div><div class='bodyfiltro'>"+"{nomeprodotto}"+"</div><div class='linkfiltro'><a class='btn btn-info' href='{linkprodotto}'>Try now</a><br/><br/></div>";
+			coloreback = "#fff";
+			for	(index = 0; index < category2Title.length; index++) {
+			descrtemp = "<div class='familyfiltro'>"+descr+"</div>"+bodydescr.replace("{imgprodotto}", "<img src='"+category2image[index]+"' border='0' style='width:100%'>")
+				descrtemp = descrtemp.replace("{nomeprodotto}", category2Title[index]).replace("{linkprodotto}", category2URL[index]);
+				html += temp.replace(/\{size\}/g, size).replace("{color}", color).replace("{description}", descrtemp).replace("{familyfilter}", descr).replace("{additionalstyle}", csstemp);
+			}
+
+			color = colour[4];
+			descr = descrizione[1];
+			csstemp= descr+"CSS"
+			bodydescr ="<div class='imagefiltro'>{imgprodotto}"+"</div><div class='bodyfiltro'>"+"{nomeprodotto}"+"</div><div class='linkfiltro'><a class='btn btn-info' href='{linkprodotto}'>Try now</a><br/><br/></div>";
+			coloreback = "#fff";
+			for	(index = 0; index < category4Title.length; index++) {
+				descrtemp = "<div class='familyfiltro'>"+descr+"</div>"+bodydescr.replace("{imgprodotto}", "<img src='"+category4image[index]+"' border='0' style='width:100%'>")
+				descrtemp = descrtemp.replace("{nomeprodotto}", category4Title[index]).replace("{linkprodotto}", category4URL[index]);
+				html += temp.replace(/\{size\}/g, size).replace("{color}", color).replace("{description}", descrtemp).replace("{familyfilter}", descr).replace("{additionalstyle}", csstemp);
+			}
+
+			$("#freewallTryBuy").html(html);
+			
+			$(function() {
+				var wall = new Freewall("#freewallTryBuy");
+				wall.reset({
+					selector: '.brick',
+					animate: true,
+					cellW: 160,
+					cellH: 'auto',
+					fixSize: 0, 
+					onResize: function() {
+						wall.fitWidth();
+					}
+				});
+				wall.filter(".Analytics");
+		
+				$(".filter-labelTB").click(function() {
+					$(".filter-labelTB").removeClass("active");
+					var filter = $(this).addClass('active').data('filter');
+					if (filter) {
+						wall.filter(filter);
+					} else {
+						wall.unFilter();
+					}
+					wall.fitWidth();
+				});
+				wall.fitWidth();
+			});
+		</script>
+</div>
+
+
+<div data-role="page" id="page_calendar" data-theme="a" class="sfondo" >
+<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="b">
+ <a id="btnBack" data-role="button" href="#menuPanel" data-icon="bars" data-iconpos="left" class="ui-btn-left" data-theme="b">&nbsp;</a>
+	<h3>Planning</h3>
+	 <ul id="evcount" data-position="fixed" data-role="listview"><li><span id="evcount"></span></li></ul>
+	<!--<a id="btnCalendarView" data-role="button" href="#calPanel" data-icon="eye" data-iconpos="right" class="ui-btn-right">&nbsp;</a>-->
+</div>
+<div data-role="content">
+
+		
+	<div  id="sharebar" class="ui-bar ui-bar-b"  style="display:none">
+   <table width="100%"><tr><td width="10"><a href="#" onclick="shareUsers('#page_shareusers #content')" data-mini="true" data-role="button" data-position="left" data-icon="share">&nbsp;</a></td><td width="10"><a href="#" data-mini="true" onclick="selectShareCancel()" data-role="button" data-position="left" data-icon="delete">&nbsp;</a></td><td align="left">&nbsp;&nbsp;<span class="small" id="nselected"></span></td><td width="20"><a href="#" data-mini="true" onclick="deleteSelected()" data-role="button" data-position="left" data-icon="thrash">&nbsp;</a></td></tr></table>
+	</div>
+  
+   <div id="calwrap">
+   <div id="legenda" style="padding: 6px; ">
+   <table>
+   <tr><td><span class="small pad5">Meeting</span></td><td id="mcolor" width="100px">&nbsp;</td><td><span class="small pad5">Event</span></td><td id="ecolor" width="100px">&nbsp;</td></tr>
+  
+   </table>
+   </div>
+   <div id="calendar" ></div>
+   </div>
+   <div id="eventlist">
+
+   <div id="evlistwrap">
+
+   <ul id="ulevlist"  data-role="listview" data-autodividers="true">
+   </ul>
+   </div>
+
+   </div>
+   
+   <!--
+    <div id="daydetail">
+   <ul data-role="listview" id="uldayevents" data-dividertheme="a" data-inset="false" class=" ui-listview ui-group-theme-a">
+   </ul>
+   </div>
+   <div id="message"></div>
+-->
+</div>
+  
+
+
+<div data-role="popup" id="eventPopup" data-theme="a" data-overlay-theme="a" class="ui-content">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+	<div id="popcontent"></div>
+
+</div>
+
+   <div id="calPanel" data-role="panel" data-theme="b" data-position="right" data-display="push">
+
+   	<ul data-role="listview"  id="ulcalpanel" data-icon="false">
+	<li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-grid" onclick="setCalendarView('month')">Month  view</a></li>
+	<li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-calendar" onclick="setCalendarView('agendaWeek')">Week  view</a></li>
+	<li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-day" onclick="setCalendarView('agendaDay')">Day  view</a></li>
+	<li data-role="list-divider">&nbsp;</li>
+	<li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-refresh" onclick="setCalendar(1)">Refresh</a></li>
+	</ul>  	 
+   </div> 
+   
+   <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" class="mango">		
+	<div data-role="navbar" data-theme="b" data-mini="true" id="navbar" data-position="fixed" data-tap-toggle="false" >
+		<ul>
+		    <li><a href="#" data-icon="bars" onclick="setCalendarView('list')">Events list</a></li>
+			<li><a href="#" data-icon="month" onclick="setCalendarView('month')">Month</a></li>
+			<li><a href="#" data-icon="calendar" onclick="setCalendarView('agendaWeek')">Week</a></li>
+			<li><a href="#" data-icon="day"  onclick="setCalendarView('agendaDay')">Day</a></li>
+			<li><a href="#" data-icon="refresh"  onclick="setCalendar(1)">Refresh</a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
+
+</div>
+
+
+<div data-role="page" id="eventDialog">
+<div data-role="header" data-position="fixed" data-tap-toggle="false">
+ <a id="btnBack" data-role="button" href="#page_calendar" data-icon="back" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
+ <h3>Add an event</h3>
+</div>
+<div data-role="content">
+
+  <div data-role="fieldcontain">
+            <input type="hidden" id="currdate" />
+			<input type="hidden" id="savemode" value='add' />
+			<input type="hidden" id="saveid" value='' />
+			<input type="hidden" id="saverev" value='' />
+			<select id="customers"  placeholder="Customers">
+			 <option>1</option>
+			</select>
+			 <input name="txtTitle" id="txtTitle" placeholder="Title" value="" type="text" />
+    <fieldset data-role="controlgroup">
+    	<legend><span class="small">Event type</span></legend>
+         	<input type="radio" name="radiogroup" id="radio-choice-21" value="event" checked="checked" />
+         	<label for="radio-choice-21" >Event</label>
+         	<input type="radio" name="radiogroup" id="radio-choice-22" value="meeting"  />
+         	<label for="radio-choice-22">Meeting</label>
+    </fieldset>
+</div>
+	
+			 <table width="100%" border="0">
+			 <tr><td>
+            <span class="small">Location</span></td>
+			<td>
+			<input class="dp" id="location" name="location" placeholder="Location" type="text" />
+			</td></tr>
+			 <tr><td width="20%">
+			<span class="small">Start</span></td><td width="100px">
+            <input class="dp" id="startdate" placeholder="start date" type="text" data-role="datebox" data-options='{"mode":"datebox","overrideDateFormat":"%d/%m/%Y"}' />
+			</td><td width="100px">
+            <input class="dp" id="starttime" placeholder="start time" type="time" data-role="datebox" data-options='{"mode":"timebox", "overrideTimeFormat": 24, "overrideTimeOutput": "%k:%M"}' />
+			</td></tr>
+			<tr><td>
+            <span class="small">End</span></td><td>
+            <input class="dp" id="enddate" placeholder="end date" type="text" data-role="datebox" data-options='{"mode":"datebox","overrideDateFormat":"%d/%m/%Y"}' />
+			</td><td>
+			<input class="dp" id="endtime" placeholder="end time" type="text" data-role="datebox" data-options='{"mode":"timebox", "overrideTimeFormat": 24, "overrideTimeOutput": "%k:%M"}' />
+			</td></tr>
+			<tr><td>
+            <span class="small">Event URL</span></td>
+			<td>
+			<input class="dp" id="eventurl" name="eventurl" placeholder="Event URL" type="text" />
+			</td></tr>
+			<tr><td>
+            <span class="small">Registration URL</span></td>
+			<td>
+			<input class="dp" id="eventregurl" name="eventregurl" placeholder="Event registration URL" type="text" />
+			</td></tr>
+			</table>
+			<textarea rows="20" name="txtDescr" id="txtDescr" placeholder="Description"> </textarea>
+		    <label><input id="allday" type="checkbox">All day event</label>
+  </div>	 		
+<a href="javascript:saveEvent()" id="savebutton" data-theme="b" class="actionbutton" data-role="button">Add event</a>
+</div>
+
+
+<div data-role="page" id="eventview" data-theme="a" class="sfondo" >
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<a id="btnBack" data-role="button" href="#" data-icon="back" data-theme="b" data-iconpos="left" class="ui-btn-left">Back</a>
+	<h3>View event</h3>
+	
+	</div>
+<div data-role="content" id="content">
+</div>
+</div>
+
+<div data-role="page" id="page_elibrary" data-theme="a" >
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<a id="btnBack" data-role="button" href="#menuPanel" data-icon="bars" data-theme="b" data-iconpos="left" class="ui-btn-left">&nbsp;</a>
+	<h3>e-Library</h3>
+	<a id="btnAdddoc" data-role="button" href="javascript:uploadDocument()" data-icon="plus" data-theme="b" data-iconpos="right" class="ui-btn-right">&nbsp;</a>
+	</div>
+
+<style type="text/css">
+			.freewalllibrary {
+				margin: 15px;
+			}
+			.bricklibrary {
+				width: 221.2px;
+				border-radius: 3px;
+				box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+				margin-top: 10px;
+				margin-right: 10px;
+				padding-left: 15px;
+				padding-top: 15px;
+				text-align: left;
+				background: white;
+				border: none;
+				min-height: 250px;
+			}
+			.infolibrary {
+				padding: 15px;
+				color: #333;
+				min-height: 180px;
+			}
+
+		</style>	
+	
+<div data-role="content" id="content">
+	
+	<div  id="sharebar" class="ui-bar ui-bar-b"  style="display:none">
+   <table><tr><td><a href="#" onclick="shareUsers('#page_shareusers #content')" data-mini="true" data-role="button" data-position="left" data-icon="share">&nbsp;</a></td><td><a href="#" data-mini="true" onclick="selectShareCancel()" data-role="button" data-position="left" data-icon="delete">&nbsp;</a></td><td><a href="#" data-mini="true" onclick="deleteSelected()" data-role="button" data-position="left" data-icon="thrash">&nbsp;</a></td><td>&nbsp;&nbsp;<span class="small" id="nselected"></span></td></tr></table>
+	</div>
+	
+			<div class="layout">
+			<div class="filter-items">
+				<div class="filter-label filter-label-library" >All</div>
+				<div class="filter-label filter-label-library active" data-filter=".filter-pdf">PDF</div>
+				<div class="filter-label filter-label-library " data-filter=".filter-video">Video</div>
+				<div class="filter-label filter-label-library " data-filter=".filter-others">Other</div>
+			</div>
+			
+			<div id='freewallLibrary' class='free-wall freewalllibrary'> </div>
+			
+		</div>
+	
+
+<!--	
+<ul id="ulelib" data-role="listview"></ul>
+-->
+</div>
+
+<div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" class="mango">		
+	<div data-role="navbar" data-theme="b" data-mini="true" id="navbar" data-position="fixed" data-tap-toggle="false" >
+		<ul>
+		    <li><a href="#" data-icon="refresh" onclick="refreshElibrary()">Refresh</a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
+</div>
+
+<div data-role="page" id="page_upload">
+<div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<a id="btnBack" data-role="button" href="#page_elibrary"  data-icon="back" data-theme="b" data-iconpos="left" class="ui-btn-left">Back</a>
+	<h3>Upload Document</h3>
+	</div>
+<form id="imageform" method="post" enctype="multipart/form-data" action='http://ssodemyapp.mybluemix.net/upload'>
+<input type="text" id="titolo" name="titolo" placeholder="title" />
+<!--<label for="doccategory">Category<select name="doccategory" id="doccategory" data-native-menu="false" data-mini="false" smultiple="multiple" size="4" placeholder="category"></select></label>-->
+<div data-role="collapsible">
+    <h4>Document tags</h4>
+	<div id="doctags"></div>
+</div>
+<div data-role="collapsible">
+    <h4>Share with users</h4>
+	<div id="users"></div>
+</div>
+<label for="url">URL<input type="text" id="url" name="url" placeholder="url"/></label>
+
+<label for="fileattach">File<input data-role="button" type="file" name="fileattach" id="fileattach" placeholder="file" /></label>
+<!--<label for="shareusers">Share with<select name="shareusers" id="shareusers" data-native-menu="false" data-mini="false" smultiple="multiple" placeholder="Share with"></select></label>-->
+<input type="hidden" id="createddate" name="createddate" value="" />
+<input type="hidden" id="sharewithusers" name="sharewithusers" value="" />
+<input type="hidden" id="tags" name="tags" value="" />
+
+<a href="javascript:goUploadDoc()" data-role="button" data-theme="b">Save document</a>
+</form>
+
+<div id='preview'>
+</div>
+</div>
+
+<div data-role="page" id="page_viewdocument">
+
+<div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<a id="btnBack" data-role="button" href="#page_elibrary"  data-icon="back" data-theme="b" data-iconpos="left" class="ui-btn-left">Back</a>
+	<h3>View Document</h3>
+	</div>
+	
+<div id="viewdoc">
+<embed style="display:none" id="pdfembed" src="https://github.com/byBrick/Phonegap-PDF-downloader-viewer/raw/master/assets/www/suchpdf.pdf" width="600" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+<!--
+<a href="#" 
+	onclick="
+	downloadAndOpenPDF(
+		'https://github.com/byBrick/Phonegap-PDF-downloader-viewer/raw/master/assets/www/suchpdf.pdf',
+		'suchpdf.pdf',
+		'/sdcard/dodge-this-doge/'
+	);">
+	Such PDF</a>-->
+<!--<object id="obj" style="width:100%;height:100%;width: 820px; height: 461.25px; float: none; clear: both; margin: 2px auto;" data="http://www.youtube.com/v/GlIzuTQGgzs"></object>-->
+<br>
+<table border="1" width="90%" style="margin: 15px; padding: 15px; display:none" >
+<tr><td width="100px">Title</td><td><span id="title" class="bold"></span></td></tr>
+<tr><td>Category</td><td><span id="category" class="bold"></span></td></tr>
+<tr><td>Creation date</td><td><span id="createddate" class="bold"></span></td></tr>
+<tr><td>Created by</td><td><span id="createdby" class="bold"></span></td></tr>
+<tr><td>Filename</td><td><span id="filename" class="bold"></span></td></tr>
+<tr><td>Path</td><td><span id="path" class="bold"></span></td></tr>
+<tr><td>URL</td><td><span id="url" class="bold"></span></td></tr>
+</table>
+<br>
+<iframe id="urlframe" width="640" height="360" src="" frameborder="0" allowfullscreen></iframe>
+<img id="imgdoc" src="" />
+
+<!--<div class="ui-grid-a" style="height: 40px">
+	<div class="ui-block-a"><strong>I'm Block A</strong> and text inside will wrap</div>
+	<div class="ui-block-b"><strong>I'm Block B</strong> and text inside will wrap</div>
+</div>--><!-- /grid-a -->
+<br>
+<a href="#" id="filelink" data-role="button" target="_new">Download file</a>
+
+
+</div>
+</div>
+
+ 
+ <div data-role="page" id="page_tools">
+ <div data-role="header" data-position="fixed" data-tap-toggle="false">
+<a id="btnBack" data-role="button" href="#menuPanel" data-icon="bars" data-theme="b" data-iconpos="left" class="ui-btn-left">&nbsp;</a>
+	<h3>Other Tools</h3>
+	</div>
+	<br><br>
+  <div role="main" class="ui-content my-page">
+		
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#" onclick="gotoCalendar()">
+                <img src="img/pgmp.png" class="ui-li-thumb">
+                <h2>PgMP</h2>
+                <p>Send SO requests to IBM and track their lifecycle</p>
+                <p class="ui-li-aside">eSolution</p>
+            </a></li>
+            <li><a href="#" onclick="gotoReachme()">
+                <img src="img/wams.png" class="ui-li-thumb">
+                <h2>WAMS</h2>
+                <p>Send AMS requests to IBM and track their lifecycle</p>
+                <p class="ui-li-aside">eSolution</p>
+            </a></li>
+            <li><a href="#" onclick="gotoElib()">
+                <img src="img/esal.png" class="ui-li-thumb">
+                <h2>eSal</h2>
+                <p>eSal helps you and IBM to share and approve your billing reports</p>
+                <p class="ui-li-aside">eSolution</p>
+            </a></li>
+            <li><a href="#">
+                <img src="img/b2b.png" class="ui-li-thumb">
+                <h2>B2B</h2>
+                <p>Easily connect with IBM</p>
+                <p class="ui-li-aside">Capabilities</p>
+            </a></li>
+            
+        </ul>
+    </div><!-- /content -->
+ </div>
+ 
+  
+<div data-role="page" id="page_shareusers" data-theme="a">
+
+
+<div data-role="header" data-position="fixed" data-tap-toggle="false">
+<!--<a id="btnBack" data-role="button" href="#menuPanel" data-icon="bars" data-theme="b" data-iconpos="left" class="ui-btn-left">&nbsp;</a>-->
+	<h3>Share with users</h3>
+	</div>
+<div id="content">
+<ul data-role="listview" id="ulshare">
+</ul>
+</div>
+<a href="#" data-role="button" id="btnShare" onclick="shareUsersOk()">Share with selected users</a>
+</div>
+
+ <div data-role="page" id="page_sociallogin">
+ 
+ <div id="socials"></div>
+ 
+ </div>
+ 
+ 
+ <div data-role="page" id="page_social">
+ <div data-role="header" data-position="fixed" data-tap-toggle="false">
+<a id="btnBack" data-role="button" href="#menuPanel" data-icon="bars" data-theme="b" data-iconpos="left" class="ui-btn-left">&nbsp;</a>
+	<h3>Social</h3>
+	</div>
+	
+		<div data-role="content">
+
+			  <div class="container portfolio_title"> 
+    
+    <div class="section-title">
+      <h2>My message</h2>
+	  <h4>Feed from Personal Page</h4>
+    </div>
+  </div>
+  
+  <style type="text/css">
+			.twitterIBM {
+				background: white;
+				border-radius: 3px;
+				box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+				margin-top: 10px;
+				margin-right: 10px;
+				padding-left: 15px;
+				padding-top: 15px;
+				margin: 20px;
+				padding-bottom: 15px;
+				padding-right: 15px;
+			}	
+
+			.freewallsocial {
+				margin: 15px;
+			}
+			.bricksocial {
+				width: 221.2px;
+				border-radius: 3px;
+				box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+				margin-top: 10px;
+				margin-right: 10px;
+				padding-left: 15px;
+				padding-top: 15px;
+				text-align: left;
+				background: white;
+				border: none;
+			}
+			.infosocial {
+				padding: 15px;
+				color: #333;
+			}
+			.bricksocial img {
+				margin: 0px;
+				padding: 0px;
+			}
+
+
+		</style>
+  
+   <div class="row">
+   
+  <!-- <script type="text/javascript" src="https://www-304.ibm.com:443/social/aggregator/demo/esma?customConfig=%7B%22feed%22:%7B%22tweets%22:true,%22blogs%22:false,%22photos%22:false,%22videos%22:false%7D,%22filter%22:%22@IBMItalia%22,%22height%22:%22600%22,%22width%22:%22100%2525%22,%22showAvatars%22:true,%22title%22:%22Twitter%2520for%2520IBMItalia%22,%22hideHeader%22:false,%22footerTitle%22:%22Twitter%2520for%2520IBMItalia%22,%22hideFooter%22:false,%22nodeId%22:%228_esma_1434462587681%22%7D">
+   
+   </script> -->
+
+   <div class="col-md-12">
+ 
+  <!--<div id="8_esma_1434462587681" class="twitterIBM"> </div>-->
+  
+   <div id="freewallSocial" class="free-wall freewallsocial"></div>
+
+	</div>	
+<div class="row">
+  <div class="col-md-6"> </div>
+</div>	
+
+
+		
+	</div>
+
+	
+ </div>
+ 
+ 
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<% 
+
+if (!user) {
+
+%>
+<a href="facebook/login"><img src="../login-with-facebook.png" width="154" height="22"></a>
+<a href="linkedin/login"><img src="../login-with-linkedin.png" width="154" height="22"></a>
+<%
+
+} else {
+%>
+
+
+<a href="logout">Logout from Facebook</a>
+
+<% }
+%>

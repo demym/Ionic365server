@@ -1,0 +1,60 @@
+#mobilePanel span {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	display: inline-block;
+}
+
+.menuSprites{
+	background-image: url("../img/side_menu/side_menu_white.png");
+	outline: none;
+	border: none !important;
+}
+.sbHome{					
+	background-position: 0 0;		
+}
+		
+.sbMessages{	
+	background-position: -20px 0;
+}
+		
+.sbAccounts{	
+	background-position: -40px 0;
+}
+		
+.sbTranfers{			
+	background-position: -60px 0;
+}
+		
+.sbBills{
+	background-position: -80px 0;			
+}
+		
+.sbMoney{
+	background-position: -100px 0;
+}
+		
+.sbCheck{
+	background-position: -120px 0;
+}
+		
+.sbLocations{
+	background-position: -140px 0;
+}
+
+.sbContact{	
+	background-position: -160px 0;
+}
+		
+.sbCash{
+	background-position: -180px 0;
+}
+		
+.sbGoals{			 
+	background-position: -200px 0;
+}
+		
+.sbAlerts{
+	background-position: -220px 0;
+}
+				

@@ -1,0 +1,9 @@
+<table>
+<tr><td>Title</td><td><%=data.title.toUpperCase()%></td></tr>
+<tr><td>Customer</td><td><%=data.customer.toUpperCase()%></td></tr>
+<tr><td>Type</td><td><%=data.eventtype.toUpperCase()%></td></tr>
+<tr><td>Start</td><td><%=data.start%></td></tr>
+<tr><td>End</td><td><%=data.end%></td></tr>
+<tr><td>All day event</td><td><%=data.allDay%></td></tr>
+</table>
+<a data-mini="true" class="ui-link ui-btn ui-btn-b ui-shadow ui-corner-all" href="#" data-role="button" onclick="editEvent('<%=data.id%>')">Update event</a>

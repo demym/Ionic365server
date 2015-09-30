@@ -1,0 +1,30 @@
+<!--<form method="post" action="demoform.asp">-->
+<!--<div class="ui-field-contain">-->
+<table width="100%" border="1">
+
+<%
+ 
+ if (!data.doc.customername) data.doc.customername="";
+ if (!data.doc.isr_email) data.doc.isr_email="";
+  if (!data.doc.isr_name) data.doc.isr_name="";
+  if (!data.doc.isr_personalpage) data.doc.isr_personalpage="";
+
+
+
+   for(var key in data.doc){
+     var val=data.doc[key];
+	 var readonly="";
+	 if ((key=="_id") || (key=="id") || (key=="_rev") || (key=="rev")) readonly="readonly";
+ %>
+ <tr><td width="20%"><%= key %></td><td>
+ <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
+ <input type="text" class="field" name="<%=key%>" id="<%=key%>" value="<%=val%>" <%= readonly %> >
+ </div>
+ </td></tr>
+  <!--<label for="<%=key %>"><%= key %></label><input type="text" name="<%=key%>" id="<%=key%>" value="<%=val%>">-->
+<% } %>
+
+</table>
+<a href="#" class="ui-link ui-btn ui-shadow ui-corner-all" data-role="button" onclick="saveObjectForm('customers')">Save</a>
+<!--</div>-->
+<!--</form>-->

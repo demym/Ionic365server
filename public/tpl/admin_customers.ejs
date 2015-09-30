@@ -1,0 +1,23 @@
+<table width="100%" border="1">
+<thead><%= data.length %> customers found</thead>
+<tr>
+<th>Customer</th>
+<th>ISR</th>
+<th>ISR E-mail</th>
+<th>ISR Page</th>
+<th>&nbsp;</th>
+<th>&nbsp;</th>
+</tr>
+<% for(var i=0; i<data.length; i++) { %>
+   <tr>
+   <!--<td><%= getSafe(data[i].id)%></td>-->   
+   <td><%= getSafe(data[i].doc.customername)%></td>
+   <td><%= getSafe(data[i].doc.isr_name)%></td>
+   <td><%= getSafe(data[i].doc.isr_email)%></td>
+   <td><%= getSafe(data[i].doc.isr_personalpage)%></td>
+   <td width="1"><a href="#" onclick="editCustomer('<%=getSafe(data[i].id)%>')" data-role="button" class="ui-link ui-btn ui-btn-icon-left ui-icon-edit  ui-btn-icon-notext ui-corner-all">Edit</a></td><td width="1">
+   <a href="#" onclick="deleteCustomer('<%=getSafe(data[i].id)%>')" data-role="button" class="ui-link ui-btn ui-btn-icon-left ui-icon-delete  ui-btn-icon-notext ui-corner-all">Delete</a></td>
+   </tr>
+  
+<% } %>
+</table>

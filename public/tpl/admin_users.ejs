@@ -1,0 +1,29 @@
+<table width="100%" border="1">
+<thead><%= data.length %> users found</thead>
+<tr>
+<th>Lastname</th>
+<th>Firstname</th>
+<th>E-mail</th>
+<th>Role</th>
+<th>Password</th>
+<th>Company</th>
+<th>Active</th>
+<th>&nbsp;</th>
+<th>&nbsp;</th>
+</tr>
+<% for(var i=0; i<data.length; i++) { %>
+   <tr>
+   <!--<td><%= getSafe(data[i].id)%></td>-->   
+   <td><%= getSafe(data[i].doc.lastname)%></td>
+   <td><%= getSafe(data[i].doc.firstname)%></td>
+   <td><%= getSafe(data[i].doc.email)%></td>
+   <td><%= getSafe(data[i].doc.role)%></td>
+   <td><%= getSafe(data[i].doc.password)%></td>
+   <td><%= getSafe(data[i].doc.company)%></td>
+   <td><%= getSafe(data[i].doc.useractive)%></td>
+   <td width="1"><a href="#" onclick="editUser('<%=getSafe(data[i].id)%>')" data-role="button" class="ui-link ui-btn ui-btn-icon-left ui-icon-edit  ui-btn-icon-notext ui-corner-all">Edit</a></td><td width="1">
+   <a href="#" onclick="deleteUser('<%=getSafe(data[i].id)%>')" data-role="button" class="ui-link ui-btn ui-btn-icon-left ui-icon-delete  ui-btn-icon-notext ui-corner-all">Delete</a></td>
+   </tr>
+  
+<% } %>
+</table>

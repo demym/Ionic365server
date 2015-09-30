@@ -1,0 +1,327 @@
+.box {
+	background: #fff;
+	padding: 15px !important;
+	margin-top: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #888888;
+	height: 500px;
+}
+
+html .ui-overlay,html .ui-page,html .ui-page .ui-panel-wrapper {
+	color: #3F468D !important;
+}
+
+.terms {
+	font-size: 11px;
+	color: #726F6F !important;
+}
+
+.head {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.ui-listview .panelHeader {
+	height: 27px;
+	font-size: 16px !important;
+}
+
+#mobilePanel .ui-listview>li {
+	border-bottom: 1px solid #292C2F !important;
+}
+
+#mobilePanel a {
+	text-shadow: 0 /*{a-bup-shadow-x}*/ 0px /*{a-bup-shadow-y}*/ 0
+		/*{a-bup-shadow-radius}*/ #f3f3f3 /*{a-bup-shadow-color}*/ !important;
+	/*font-size: 16px;
+	font-weight: normal;*/
+	font-weight: 300;
+	letter-spacing: 2px;
+}
+
+#mobilePanel .ui-listview>.ui-li-divider {
+	font-size: 11px;
+	background-color: #2C2828;
+	color: #ccc;
+	text-shadow: 0 /*{a-bup-shadow-x}*/ 0px /*{a-bup-shadow-y}*/ 0
+		/*{a-bup-shadow-radius}*/ #f3f3f3 /*{a-bup-shadow-color}*/ !important;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+
+#ulPanel .icon {
+	width: 25px;
+	height: 25px;
+	padding: 10px 12px;
+}
+
+#mobilePanel .ui-listview>.ui-li-has-thumb>.ui-btn,.ui-listview>.ui-li-static.ui-li-has-thumb
+	{
+	min-height: 1.25em;
+	padding-left: 3.25em;
+}
+
+#mainPage .ui-btn-icon-left {
+	padding-left: 2em;
+}
+
+#mainPage .ui-btn {
+	text-align: left;
+	font-weight: 200;
+	letter-spacing: 1px;
+}
+
+#loginPage .ui-btn {
+	font-weight: 200;
+	letter-spacing: 1px;
+}
+
+/* Account list */
+.rightText {
+	position: absolute;
+	top: 35%;
+	right: 40px;
+	margin-top: -0.6em;
+	color: #5E5099;
+	font-weight: normal;
+}
+
+#accountDetailsList .ui-li-heading,#accountList .ui-li-heading,#offersList .ui-li-heading
+	{
+	font-weight: 200;
+	color: #5E5099;
+}
+
+#splashPage h2 {
+	font-weight: lighter;
+	letter-spacing: 3px;
+}
+
+.negative {
+	color: #DE254B;
+}
+
+#accountDetailsList .rightText {
+	right: 20px;
+}
+
+#accountList li,#accountDetailsList li
+#offersList li {
+	border: 1px solid #e9e9ed;
+}
+
+#accountList a,#accountDetailsList a,#offersList a {
+	background: #ffffff;
+	border-color: #f2f2f2;
+	color: #757575;
+	border: 0px solid #f2f2f2;
+	padding: 2px 10px;
+}
+
+#accountDetailsPage .ui-header .ui-title,.ui-footer .ui-title {
+	margin: 0 10%;
+}
+
+#offersPage .ui-listview>li p {
+	text-overflow: initial;
+	white-space: normal;
+}
+
+#offersPage .ui-listview>li {
+	border-bottom: 1px solid #ccc;
+}
+
+.welcome {
+	/* font-size: 130%; */
+	font-family: Helvetica;
+	font-style: normal;
+	font-weight: bold;
+	color: black;
+	text-align: left;
+}
+
+.pad15 {
+	padding: 15px;
+}
+
+.padSignIn {
+	padding: 15px;
+	padding-top: 20px;
+}
+
+.signInHeader {
+	font-size: 120%;
+}
+
+.signInText {
+	font-size: 90%;
+}
+
+#offerActionBtn {
+	padding-left: 30% !important;
+	padding-right: 30% !important;
+}
+
+hr {
+	border: 1px solid;
+}
+
+.infoWindow {
+	height: 98%;
+	border: 2px solid;
+	border-radius: 5px;
+	background-color: #E5E5E5;
+	width: 150px !important;
+}
+
+.map {
+	background: #fff;
+	padding: 15px !important;
+	margin-top: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #888888;
+	/* height: 250px !important; */
+}
+
+.menu {
+	background: #fff;
+	padding: 15px ;
+	margin-top: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+.title {
+	height: 10px;
+	font-family: Helvetica;
+	font-weight: bold;
+	font-style: normal;
+	text-align: center;
+	color: black;
+}
+
+.tweet {
+	margin-top: 10px;
+	margin-bottom: 15px;
+	height: 10px;
+	text-align: center;
+}
+
+.details {
+	background: #fff;
+	padding: 15px !important;
+	margin-top: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #888888;
+	max-height: 200px;
+}
+
+.detailHeading {
+	font-weight: bold;
+	float: left;
+	color: black;
+}
+
+.detailHeading2 {
+	font-weight: bold;
+	float: right;
+	color: black;
+}
+
+.descrizioneIntervento {
+	font-weight: bold;
+	color: black;
+}
+
+.testoDescrizione {
+	font-family: Helvetica;
+	font-style: normal;
+	font-weight: lighter;
+	color: black;
+	max-height: 130px;
+	max-width: 100%;
+	overflow-y: scroll;
+}
+
+.descrizioneCantiere {
+	font-weight: bold;
+	color: red;
+}
+
+.nomeIntervento {
+	font-style: italic;
+}
+
+.displaynone {
+	display: none;
+}
+
+/* ########### TWITTER STYLES ########### */
+/* ---- TWITTER TIMELINES ---- */
+.twitterBox {
+	background: #fff;
+	padding: 1px !important;
+	margin-top: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #888888;
+	/* width: 300px;
+	height: 200px; */
+	/* width: 100%;
+	height: 80%; */
+}
+
+a.twitter-timeline {
+	display: inline-block;
+	/* padding: 6px 12px 6px 30px; */
+	/* margin: 10px 0; */
+	border: #ccc solid 1px;
+	border-radius: 3px;
+	background: #f8f8f8 url(//platform.twitter.com/images/bird.png) 8px 8px
+		no-repeat;
+	font: normal 12px/18px Helvetica, Arial, sans-serif;
+	color: #333;
+	white-space: nowrap;
+	/* width: 100%;
+	height: 100%; */
+}
+
+a.twitter-timeline:hover,a.twitter-timeline:focus {
+	background-color: #dedede;
+}
+
+/* Color Highlight for keyboard navigation */
+a.twitter-timeline:focus {
+	outline: none;
+	border-color: #0089cb;
+}
+
+/* ---- TWITTER EMBEDDED TWEETS ---- */
+blockquote.twitter-tweet {
+	display: inline-block;
+	padding: 16px;
+	margin: 10px 0;
+	max-width: 468px;
+	border: #ddd 1px solid;
+	border-top-color: #eee;
+	border-bottom-color: #bbb;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+	font: bold 14px/18px Helvetica, Arial, sans-serif;
+	color: #000;
+}
+
+blockquote.twitter-tweet p {
+	font: normal 18px/24px Georgia, "Times New Roman", Palatino, serif;
+	margin: 0 5px 10px 0;
+}
+
+blockquote.twitter-tweet a[href^="https://twitter.com"] {
+	font-weight: normal;
+	color: #666;
+	font-size: 12px;
+}

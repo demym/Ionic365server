@@ -1,0 +1,22 @@
+<!--<table border="0" width="100%" class="checksel" sid="userstable">-->
+<ul data-role="listview">
+<% for(var i=0; i<data.length; i++) { %>
+<!--<tr><td width="30px"><input class="mycheck" type="checkbox" id="<%= data[i].id %>"/></td><td width="200px" align="left"><%= data[i].value1 %></td><td><%= data[i].value2 %></td><td><%= data[i].value4 %></td><td><%= data[i].value3 %></td>
+</tr>-->
+
+
+   <li data-role="fieldcontain" data-filter="true">
+        <a href="#">
+        <fieldset data-role="controlgroup">
+            <input type="checkbox" name="bought" id="bought" class="custom" />
+            <label for="bought">hmm</label>
+        </fieldset>
+        </a>
+        <a href="#"></a>
+    </li>
+
+<% } %>
+<!--</table>-->
+
+
+</ul>

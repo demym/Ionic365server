@@ -1,0 +1,857 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<script src="cordova.js"  onload="javascript:window.isCordovaApp = true;"></script>
+ <script type="text/javascript" src="js/moment.min.js"></script>
+<script type='text/javascript' src='js/_loader.js'></script>
+<script src="js/jqm/jquery.mobile-1.4.4.min.js"></script>
+<script type='application/javascript' src='js/fastclick.js'></script>
+<script type="text/javascript" src="js/ejs.js"></script>
+<script src="js/app.js"></script>
+<link rel="stylesheet" href="js/jqm/jquery.mobile-1.4.4.min.css" />
+<!--<link href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" rel="stylesheet" />-->
+<!--link href="ios_inspired/styles.css" rel="stylesheet" />-->
+
+<link rel='stylesheet' type='text/css' href='css/jqm-datebox.min.css' />
+<!--<link rel="stylesheet" href="css/jqm_ios.css" />-->
+ <script type="text/javascript" src="js/jqm-datebox.core.min.js"></script>
+ <script type="text/javascript" src="js/jquery.backstretch.js"></script>
+ <script type="text/javascript" src="js/jquery.form.js"></script>
+ <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+
+ <script type="text/javascript" src="js/wow.min.js"></script> 
+ <!--<script type="text/javascript" src="js/custom.js"></script>-->
+<!--<script type="text/javascript" src="js/PushNotification.js"></script>
+<script type="text/javascript" src="//cdn.pubnub.com/pubnub-3.7.4.min.js"></script>-->
+
+ <!-- css per home page -->
+ <link href="css/dino2/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dino2/font-awesome.min.css" rel="stylesheet">
+    <link href="css/dino2/main.css" rel="stylesheet">
+    <link href="css/dino2/responsive.css" rel="stylesheet">
+    <link href="css/dino2/dedicated.css" rel="stylesheet">
+	<link href="css/dino2/styleTryBuy.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/tut01.css" />
+ <!-- fine css per homepage -->
+<!--[[
+<link rel='stylesheet' type='text/css' href='css/jqm-datebox.min.css' />
+<link rel='stylesheet' type='text/css' href='../fullcalendar/fullcalendar.print.css' media='print' />
+<script type='text/javascript' src='../jquery/jquery.js'></script>
+<script type='text/javascript' src='../jquery/jquery-ui.js'></script>
+<script type='text/javascript' src='../fullcalendar/fullcalendar.min.js'></script>
+]]-->
+
+</head>
+<body onload="init()">
+
+
+ <div data-role="page" id="login" data-theme="a">
+       <div data-role="header" class="ui-content" data-theme="b">
+	   <h3>Digital Collaboration Hub</h3>
+			<!--<table><tr><td>
+			  <img src="img/ibm_launcher.gif" width='40' height='13' /></td><td align="center">Generali</td></tr></table>-->
+		</div>
+        <div role="main" class="ui-content">
+		        <br>
+	            <h2 class="mc-text-center">Welcome to IBM Digital Collaboration Hub</h2>
+	            <p class="mc-top-margin-1-5"><b>Existing Users</b></p>
+	            <a href="#" onclick="showLoginPage()" class="ui-btn ui-btn-b ui-corner-all">Sign In</a>
+				<br><br>
+	            <p class="mc-top-margin-1-5"><b>Don't have an account?</b></p>
+	            <a href="#signup" class="ui-btn ui-btn-b ui-corner-all">Register account</a>
+	            <p></p>
+     </div><!-- /content -->
+	 <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" class="mango" >		
+	<img class="footimage" src="img/bluemix.png"/>
+</div>
+	
+    </div><!-- /page -->
+
+	
+	 <div data-role="page" id="login2">
+        <div data-role="header" data-theme="c">
+	            <h1>Login</h1>
+	        </div><!-- /header -->
+	        <div role="main" class="ui-content">
+	           <h3>&nbsp;</h3>
+	            <label for="txt-email">Email Address</label>
+	            <input type="text" name="txt-email" id="txt-email" value="">
+	            <label for="txt-password">Password</label>
+	            <input type="password" name="txt-password" id="txt-password" value="">
+	            <fieldset data-role="controlgroup">
+	                <input type="checkbox" name="chck-rememberme" id="chck-rememberme" checked="">
+	                <label for="chck-rememberme">Remember me</label>
+	            </fieldset>
+	            <a href="#" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit"  onclick="doLogin()" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Login</a>
+	            <p class="mc-top-margin-1-5"><a href="begin-password-reset.html">Can't access your account?</a></p>
+	            <div data-role="popup" id="dlg-invalid-credentials" data-dismissible="false" style="max-width:400px;">
+	                <div role="main" class="ui-content" style="padding: 14px">
+	                    <h3 class="mc-text-danger">Login Failed</h3>
+	                    <p>Did you enter the right credentials?</p>
+	                    <div class="mc-text-center"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">OK</a></div>
+	                </div>
+	            </div>
+	        </div><!-- /content -->
+				 <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" class="mango" >		
+	<img class="footimage" src="img/bluemix.png"/>
+</div>
+	    </div><!-- /page -->
+		
+		
+		<div data-role="page" id="signup">
+    <div data-role="header" data-theme="c">
+        <h1>Signup</h1>
+    </div><!-- /header -->
+    <div role="main" class="ui-content">
+        <h3>Sign Up</h3>
+        <label for="txt-first-name">First Name</label>
+        <input type="text" name="txt-first-name" id="txt-first-name" value="">
+        <label for="txt-last-name">Last Name</label>
+        <input type="text" name="txt-last-name" id="txt-last-name" value="">
+        <label for="txt-email">Email Address</label>
+        <input type="text" name="txt-email" id="txt-email" value="">
+        <label for="txt-password">Password</label>
+        <input type="password" name="txt-password" id="txt-password" value="">
+        <label for="txt-password-confirm">Confirm Password</label>
+        <input type="password" name="txt-password-confirm" id="txt-password-confirm" value="">
+        <a href="#" onclick="doSignup()" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Submit</a>
+        <div data-role="popup" id="dlg-sign-up-sent" data-dismissible="false" style="max-width:400px;">
+            <div data-role="header">
+                <h1>Almost done...</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <h3>Confirm Your Email Address</h3>
+                <p>We sent you an email with instructions on how to confirm your email address. Please check your inbox and follow the instructions in the email.</p>
+                <div class="mc-text-center"><a href="sign-in.html" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">OK</a></div>
+                    
+            </div>
+        </div>
+    </div><!-- /content -->
+</div><!-- /page -->
+
+
+
+
+<div data-role="page" id="index" class="sfondo" data-theme="a"   >
+
+
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<h3>DIGITAL COLLABORATION HUB </h3>
+	<a id="btnAccount" data-role="button" href="#accountPanel" data-icon="user" data-theme="b" data-iconpos="right" class="ui-btn-right">&nbsp;</a>
+	</div>
+	<div data-role="content" id="index_content" >
+	<div id="accountPanel" data-role="panel" data-theme="b" data-display="overlay" data-transition="slide" data-position="right">
+   <ul data-role="listview"  class="ui-listview" id="ulaccountpanel" >
+	<li><span class="smallslim bold" style="color: lightblue;" id="useremail"></span></li>
+	<li><span class="smallslim" style="color: lightblue;" id="username"></span></li>
+	<li><span class="smallslim" style="color: lightblue;" id="userrole"></span></li>
+	<li><span class="smallslim" style="color: lightblue;" id="usercompany"></span></li>
+	<li data-icon="false"><a href="#" data-icon="false" class="slinkCALENDAR" onclick="changePassword()"><span class="smallslim">Change password</span></a></li>
+	<li data-icon="false"><a href="#" class="slinkREACHME" onclick="doLogout()"><span class="smallslim">Log Out</span></a></li>
+	<li data-icon="false"><a href="#" class="slinkREACHME" onclick="exitapp()"><span class="smallslim">Exit app</span></a></li>
+	</ul>  	
+</div>	
+	 <section id="feature" >
+        <div class="container">
+            <div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap circle TestoIconP" onclick="gotoCalendar()">
+                            <i class="fa fa-calendar-o"></i>
+                            <h2>Planning</h2>
+                            <h3>Meetings, Events, Agenda</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap circle TestoIconR" onclick="gotoReachMe()">
+                            <i class="fa fa-users"></i>
+                            <h2>Reach Me</h2>
+                            <h3>Anywhere, Anytime, Anyhow</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap circle TestoIconE" onclick="gotoElib()">
+                            <i class="fa fa-book"></i>
+                            <h2>e-Library</h2>
+                            <h3>Store, Read, Share</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap circle TestoIconS">
+                            <i class="fa fa-mobile-phone"></i>
+                            <h2>Social</h2>
+                            <h3>xxxxxx xxxxxxxxx<br>xxxxxxxxx</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap circle TestoIconT" onclick="gotoTryAndBuy()">
+                            <i class="fa fa-life-ring"></i>
+                            <h2>Try & Buy</h2>
+                            <h3>xxxxxx xxxxxxxxx<br>xxxxxxxxx</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+
+                        <div class="feature-wrap circle TestoIconO">
+                            <i class="fa fa-puzzle-piece"></i>
+                            <h2>Others</h2>
+                            <h3>xxxxxx xxxxxxxxx<br>xxxxxxxxx</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+                </div><!--/.services-->
+            </div><!--/.row-->    
+        </div><!--/.container-->
+    </section><!--/#feature-->
+	
+	
+ 
+	
+	
+	</div>
+	
+	
+	
+	
+	
+	<!-- vecchio content -->
+
+<div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" class="mango" >		
+	<img class="footimage" src="img/bluemix.png"/>
+</div>
+<!-- /footer -->
+</div>
+
+
+
+<div data-role="page" id="index_old" class="sfondo" data-theme="a"   >
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<h3>DIGITAL COLLABORATION HUB </h3>
+	<a id="btnAccount" data-role="button" href="#accountPanel" data-icon="user" data-theme="b" data-iconpos="right" class="ui-btn-right">&nbsp;</a>
+	</div>
+	<div data-role="content" id="index_content" >
+	<div id="accountPanel" data-role="panel" data-theme="b" data-display="overlay" data-transition="slide" data-position="right">
+   <ul data-role="listview"  class="ui-listview" id="ulaccountpanel" >
+	<li>
+	  <span class="smallslim bold" style="color: lightblue;" id="useremail"></span>
+	</li>
+		<li><span class="smallslim" style="color: lightblue;" id="username"></span></li>
+	<li><span class="smallslim" style="color: lightblue;" id="userrole"></span></li>
+	<!--<li><span class="smallslim" style="color: lightblue;" id="usercompany"></span></li>-->
+	<li data-icon="false"><a href="#" data-icon="false" class="slinkCALENDAR" onclick="changePassword()"><span class="smallslim">Change password</span></a></li>
+	<li data-icon="false"><a href="#" class="slinkREACHME" onclick="doLogout()"><span class="smallslim">Log Out</span></a></li>
+	<li data-icon="false"><a href="#" class="slinkREACHME" onclick="exitapp()"><span class="smallslim">Exit app</span></a></li>
+	</ul>  	
+</div>	
+	 <div class="sui-grid-b sui-responsive indexgrid">
+    <div class="sui-block-a"><input data-icon="calendar" value="Planner" type="button" onclick="gotoCalendar()"></div>
+    <div class="sui-block-b"><input data-icon="cloud" value="Elibrary" type="button"  onclick="gotoElib()"></div>
+    <div class="sui-block-c"><input data-icon="user" sdata-iconpos="right" value="Reach Me" type="button"  onclick="gotoReachMe()"></div>
+	<div class="sui-block-c"><input data-icon="heart" sdata-iconpos="right" value="Sentiment" type="button"></div>
+	<div class="sui-block-c"><input data-icon="tag" sdata-iconpos="right" value="Try and Buy" type="button"  onclick="gotoTryAndBuy()"></div>
+	<div class="sui-block-c"><input data-icon="gear" sdata-iconpos="right" value="Tools" type="button"></div>
+	<div class="sui-block-c"><input data-icon="gear" sdata-iconpos="right" value="Exit" onclick="exitapp()" type="button"></div>
+</div>
+    </div>
+	<div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" class="mango" >		
+	<img class="footimage" src="img/bluemix.png"/>
+    </div>
+</div>	
+
+<div data-role="page" id="reachme" data-theme="a" class="sfondo" >
+<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="b">
+ <a id="btnBack" data-role="button" href="#menuPanel" data-icon="bars" data-iconpos="left" class="ui-btn-left" data-theme="b">&nbsp;</a>
+	<h3>Reach me</h3>
+	<!--<a id="btnCalendarView" data-role="button" href="#calPanel" data-icon="eye" data-iconpos="right" class="ui-btn-right">&nbsp;</a>-->
+	</div>
+	 <div  id="ContactPopup" data-theme="a" data-overlay-theme="a" sclass="ui-content">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">X</a>
+	<div id="popcontent">
+			<h2>Contattami</h2>
+		<p>Puoi contattarmi via emai, via chat o attraverso la mia personal page</p>
+	</div>
+</div> 
+	<div data-role="content">
+	 
+
+	<!-- Pagina Contatti -->
+	  <div class="container portfolio_title"> 
+    
+    <!-- Title -->
+    <div class="section-title">
+      <h2>Reach me</h2>
+	  <h6>Rimani in contatto</h6>
+    </div>
+    <!--/Title --> 
+  </div>
+
+ 
+<div class="member-area">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="member wow bounceInUp animated boxmember">
+								<div class="member-container" data-wow-delay=".1s">
+									<div class="inner-container">
+										<div class="author-avatar">	
+<a href="#" onclick="openContact('DinoRavasi')" data-rel="popup"><img class="img-circle" src="img/contatti/DinoRavasi.jpg" alt="Dino Ravasi"></a>
+										</div><!-- /.author-avatar -->
+
+										<div class="member-details">
+											<div class="member-top">									
+												<h4 class="name">
+													Dino Ravasi
+												</h4>
+												<span class="designation">
+													Digital Sales Solution Rep
+												</span>
+											</div><!-- /.member-top -->
+
+											<p>
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.
+											</p>
+											<div class="member-social-link">
+												<a href="#" class="twitter-btn"><i class="fa fa-twitter"></i></a>
+												<a href="#" class="linkedin-btn"><i class="fa fa-linkedin"></i></a>
+											</div><!-- /.member-social-link -->
+										</div><!-- /.member-details -->
+									</div><!-- /.inner-container -->
+								</div><!-- /.member-container -->
+							</div><!-- /.member -->
+						</div>
+
+						<div class="col-md-5">
+							<div class="member wow bounceInUp animated boxmember">
+								<div class="member-container" data-wow-delay=".3s">
+									<div class="inner-container">
+										<div class="author-avatar">									
+											<img class="img-circle" src="img/contatti/AndreaRufo.jpg" alt="Andrea Rufo">
+										</div><!-- /.author-avatar -->
+										<div class="member-details">
+											<div class="member-top">									
+												<h4 class="name">
+													Andrea Rufo
+												</h4>
+												<span class="designation">
+													Sales Manager, IA Industry & Enterprise
+												</span>
+											</div><!-- /.member-top -->
+											<p>
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.
+											</p>
+											<div class="member-social-link">
+												<a href="#" class="twitter-btn"><i class="fa fa-twitter"></i></a>
+												<a href="#" class="linkedin-btn"><i class="fa fa-linkedin"></i></a>
+											</div><!-- /.member-social-link -->
+										</div><!-- /.member-details -->
+									</div><!-- /.inner-container -->
+								</div><!-- /.member-container -->
+							</div><!-- /.member -->
+						</div>
+
+						<div class="col-md-5">
+							<div class="member wow bounceInUp animated boxmember" >
+								<div class="member-container" data-wow-delay=".5s">
+									<div class="inner-container">
+										<div class="author-avatar">									
+											<img class="img-circle" src="img/contatti/DemyMortelliti.jpg" alt="Demetrio Mortelliti">
+										</div><!-- /.author-avatar -->
+										<div class="member-details">
+											<div class="member-top">									
+												<h4 class="name">
+													Demetrio Mortelliti
+												</h4>
+												<span class="designation">
+													Web Architect
+												</span>
+											</div><!-- /.member-top -->
+											<p>
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.
+											</p>
+											<div class="member-social-link">
+												<a href="#" class="twitter-btn"><i class="fa fa-twitter"></i></a>
+												<a href="#" class="linkedin-btn"><i class="fa fa-linkedin"></i></a>
+											</div><!-- /.member-social-link -->
+										</div><!-- /.member-details -->
+									</div><!-- /.inner-container -->
+								</div><!-- /.member-container -->
+							</div><!-- /.member -->
+						</div>
+
+						
+						<div class="col-md-5">
+							<div class="member wow bounceInUp animated boxmember" >
+								<div class="member-container" data-wow-delay=".5s">
+									<div class="inner-container">
+										<div class="author-avatar">									
+											<img class="img-circle" src="img/contatti/LeleTurati.jpg" alt="Lele Turati">
+										</div><!-- /.author-avatar -->
+										<div class="member-details">
+											<div class="member-top">									
+												<h4 class="name">Lele Turati</h4>
+												<span class="designation">Private Commerce Digital Sales Manager</span>
+											</div><!-- /.member-top -->
+											<p>
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.
+											</p>
+											<div class="member-social-link">
+												<a href="#" class="twitter-btn"><i class="fa fa-twitter"></i></a>
+												<a href="#" class="linkedin-btn"><i class="fa fa-linkedin"></i></a>
+											</div><!-- /.member-social-link -->
+										</div><!-- /.member-details -->
+									</div><!-- /.inner-container -->
+								</div><!-- /.member-container -->
+							</div><!-- /.member -->
+						</div>
+						
+
+						</div><!-- /.row -->
+				</div>	
+
+
+
+
+				
+	<!-- Fine Contatti -->
+	</div>
+
+
+</div>
+
+
+<div data-role="page" id="trybuy" data-theme="a" class="sfondo" >
+<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="b">
+ <a id="btnBack" data-role="button" href="#menuPanel" data-icon="bars" data-iconpos="left" class="ui-btn-left" data-theme="b">&nbsp;</a>
+	<h3>Try & Buy</h3>
+	<!--<a id="btnCalendarView" data-role="button" href="#calPanel" data-icon="eye" data-iconpos="right" class="ui-btn-right">&nbsp;</a>-->
+	</div>
+	<div data-role="content">
+
+	<!-- Pagina Try & Buy -->
+<!-- Portfolio -->
+<section id="Portfolio" class="content"> 
+  
+  <!-- Container -->
+  <div class="container portfolio_title"> 
+    
+    <!-- Title -->
+    <div class="section-title">
+      <h2>Try & Buy</h2>
+    </div>
+    <!--/Title --> 
+  </div>
+  <!-- Container -->
+  
+  <div class="portfolio-top"></div>
+  
+  <!-- Portfolio Filters -->
+  <div class="portfolio"> 
+    
+    <div id="filters" class="sixteen columns">
+      <ul class="clearfix">
+        <li><a id="all" href="#" data-filter="*" class="active">
+          <h5>All</h5>
+          </a></li>
+        <li><a class="" href="#" data-filter=".TryBuyCloud">
+          <h5>Cloud</h5>
+          </a></li>
+        <li><a class="" href="#" data-filter=".TryBuyAnalytics">
+          <h5>Analytics</h5>
+          </a></li>
+        <li><a class="" href="#" data-filter=".TryBuyMobile">
+          <h5>Mobile</h5>
+          </a></li>
+        <li><a class="" href="#" data-filter=".TryBuySocial">
+          <h5>Social</h5>
+          </a></li>
+        <li><a class="" href="#" data-filter=".TryBuySecurity">
+          <h5>Security</h5>
+          </a></li>
+      </ul>
+    </div>
+    <!--/Portfolio Filters --> 
+    
+    <!-- Portfolio Wrapper -->
+    <div class="isotope fadeInLeft animated wow" style="position: relative; overflow: hidden; height: 480px;" id="portfolio_wrapper"> 
+      
+      <!-- Portfolio Item -->
+      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); opacity: 1;" class="portfolio-item one-four TryBuySocial isotope-item">
+        <div class="portfolio_img"> <img src="img/TryBuy/portfolio_pic1.jpg"  alt="Portfolio 1"> </div>        
+        <div class="item_overlay">
+          <div class="item_info"> 
+            <h4 class="project_name">Try & Buy Social</h4>
+          </div>
+        </div>
+        </div>
+      <!--/Portfolio Item --> 
+
+      <!-- Portfolio Item -->
+      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); opacity: 1;" class="portfolio-item one-four TryBuySocial isotope-item">
+        <div class="portfolio_img"> <img src="img/TryBuy/social.jpg"  alt="Portfolio 1"> </div>        
+        <div class="item_overlay">
+          <div class="item_info"> 
+            <h4 class="project_name">Try & Buy Social</h4>
+          </div>
+        </div>
+        </div>
+      <!--/Portfolio Item --> 
+
+	  
+      <!-- Portfolio Item-->
+      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four TryBuyAnalytics isotope-item">
+        <div class="portfolio_img"> <img src="img/TryBuy/portfolio_pic2.jpg" alt="Portfolio 1"> </div>
+        <div class="item_overlay">
+          <div class="item_info"> 
+            <h4 class="project_name">Try & Buy Analytics</h4>
+          </div>
+        </div>
+      </div>
+      <!--/Portfolio Item --> 
+      
+      <!-- Portfolio Item -->
+      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(674px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four TryBuyAnalytics isotope-item">
+        <div class="portfolio_img"> <img src="img/TryBuy/portfolio_pic3.jpg" alt="Portfolio 1"> </div>
+        <div class="item_overlay">
+          <div class="item_info"> 
+            <h4 class="project_name">Try & Buy Analytics</h4>
+          </div>
+        </div>
+      </div>
+      <!--/Portfolio Item--> 
+      
+      <!-- Portfolio Item-->
+      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(1011px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  TryBuyMobile  TryBuyCloud TryBuySecurity isotope-item">
+        <div class="portfolio_img"> <img src="img/TryBuy/portfolio_pic4.jpg" alt="Portfolio 1"> </div>
+        <div class="item_overlay">
+          <div class="item_info"> 
+            <h4 class="project_name">Try & Buy Mobile/Cloud/Security</h4>
+          </div>
+        </div>
+      </div>
+      <!-- Portfolio Item --> 
+      
+      <!-- Portfolio Item -->
+      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  TryBuyAnalytics isotope-item">
+        <div class="portfolio_img"> <img src="img/TryBuy/portfolio_pic5.jpg" alt="Portfolio 1"> </div>
+        <div class="item_overlay">
+          <div class="item_info"> 
+            <h4 class="project_name">Try & Buy Analytics</h4>
+          </div>
+        </div>
+      </div>
+      <!--/Portfolio Item --> 
+      
+      <!-- Portfolio Item -->
+      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  TryBuySecurity isotope-item">
+        <div class="portfolio_img"> <img src="img/TryBuy/portfolio_pic6.jpg" alt="Portfolio 1"> </div>
+        <div class="item_overlay">
+          <div class="item_info"> 
+            <h4 class="project_name">Try & Buy Security</h4>
+          </div>
+        </div>
+      </div>
+      <!--/Portfolio Item --> 
+      
+      <!-- Portfolio Item  -->
+      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(674px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  TryBuyAnalytics TryBuySecurity isotope-item">
+        <div class="portfolio_img"> <img src="img/TryBuy/portfolio_pic7.jpg" alt="Portfolio 1"> </div>       
+        <div class="item_overlay">
+          <div class="item_info"> 
+            <h4 class="project_name">Try & Buy Analytics/Security</h4>
+          </div>
+        </div>
+       </div>
+      <!--/Portfolio Item --> 
+      
+      <!-- Portfolio Item -->
+      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(1011px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four TryBuyMobile TryBuySocial isotope-item">
+        <div class="portfolio_img"> <img src="img/TryBuy/portfolio_pic8.jpg" alt="Portfolio 1"> </div>       
+        <div class="item_overlay">
+          <div class="item_info"> 
+				<h4 class="project_name">Try & Buy Mobile/Social</h4>
+          </div>
+        </div>
+        </a> </div>
+      <!--/Portfolio Item --> 
+      
+    </div>
+    <!--/Portfolio Wrapper --> 
+    
+  </div>
+  <!--/Portfolio Filters -->
+  
+  <div class="portfolio_btm"></div>
+  
+  
+  <div id="project_container">
+    <div class="clear"></div>
+    <div id="project_data"></div>
+  </div>
+ 
+  
+</section>
+<!--/Portfolio --> 
+	<!-- Fine Try & Buy -->
+	</div>
+
+</div>
+
+
+
+
+<div data-role="page" id="page_calendar" data-theme="a" class="sfondo" >
+
+<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="b">
+ <a id="btnBack" data-role="button" href="#menuPanel" data-icon="bars" data-iconpos="left" class="ui-btn-left" data-theme="b">&nbsp;</a>
+	<h3>PLANNING</h3>
+	<a id="btnShare" data-role="button" href="#" data-icon="share" data-theme="b" data-iconpos="left" class="ui-btn-right ui-icon-myshare">&nbsp;</a>
+	<!--<a id="btnCalendarView" data-role="button" href="#calPanel" data-icon="eye" data-iconpos="right" class="ui-btn-right">&nbsp;</a>-->
+	</div>
+	<div data-role="content">
+  
+   <div id="calwrap">
+   <div id="legenda" style="padding: 6px; ">
+   <table>
+   <tr><td><span class="small pad5">Meeting</span></td><td id="mcolor" width="100px">&nbsp;</td><td><span class="small pad5">Event</span></td><td id="ecolor" width="100px">&nbsp;</td></tr>
+  
+   </table>
+   </div>
+   <div id="calendar" ></div>
+   </div>
+   <div id="eventlist">
+   <div id="evlistwrap">
+   <ul id="ulevlist"  data-role="listview">
+   </ul>
+   </div>
+
+   </div>
+   
+   <!--
+    <div id="daydetail">
+   <ul data-role="listview" id="uldayevents" data-dividertheme="a" data-inset="false" class=" ui-listview ui-group-theme-a">
+   </ul>
+   </div>
+   <div id="message"></div>
+-->
+</div>
+  
+<!--
+
+   <div id="menuPanel" data-role="panel" data-theme="b" data-display="overlay" data-transition="fade">
+       	<ul data-role="listview"  id="ulcalpanel" >
+	<li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-home" onclick="gotoIndex()">Home</a></li>
+	<li><a href="#" class="linkCALENDAR" onclick="setCalendar(1)">Planning</a></li>
+	<li><a href="#" class="linkREACHME" onclick="">Reach Me</a></li>
+	<li><a href="#" class="linkELIBRARY" onclick="gotoElib()">e-Library</a></li>
+	<li><a href="#" class="linkSOCIAL" onclick="">Social</a></li>
+	<li><a href="#" class="linkTRYBUY" onclick="">Try and buy</a></li>
+	<li><a href="#" class="linkOTHER" onclick="">Other Capabilities</a></li>
+	<li data-role="list-divider">&nbsp;</li>
+	<li><a href="#" class="linkEXIT" onclick="exitapp()">Exit</a></li>
+	</ul>  	
+</div>	
+
+-->
+
+<div data-role="popup" id="eventPopup" data-theme="a" data-overlay-theme="a" class="ui-content">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+	<div id="popcontent"></div>
+
+</div>
+  <!--
+	  <div class="sui-grid-b ui-responsive">
+	  <div class="but ui-block-a"><input data-icon="bullets" value="Index" type="button" onclick="gotoIndex()"></div>
+    <div class="but ui-block-a"><input data-icon="calendar" value="Calendar" type="button" onclick="setCalendar(1)"></div>
+    <div class="but ui-block-b"><input data-icon="cloud" value="Files" type="button"></div>
+    <div class="but ui-block-c"><input data-icon="user" sdata-iconpos="right" value="Contacts" type="button"></div>
+	<div class="but ui-block-c"><input data-icon="heart" sdata-iconpos="right" value="Sentiment" type="button"></div>
+	<div class="but ui-block-c"><input data-icon="tag" sdata-iconpos="right" value="Try and Buy" type="button"></div>
+	<div class="but ui-block-c"><input data-icon="gear" sdata-iconpos="right" value="Tools" type="button"></div>
+	<div class="but ui-block-c"><input data-icon="gear" sdata-iconpos="right" value="Exit" onclick="exitapp()" type="button"></div>
+	</div>
+</div>
+-->
+   <div id="calPanel" data-role="panel" data-theme="b" data-position="right" data-display="push">
+	<!--  <div class="sui-grid-b ui-responsive">
+	  <div class="but ui-block-a"><input data-icon="bullets" value="Month view" type="button" onclick="setCalendarView('month')"></div>
+    <div class="but ui-block-a"><input data-icon="calendar" value="Week view" type="button" onclick="setCalendarView('agendaWeek')"></div>
+	<div class="but ui-block-a"><input data-icon="calendar" value="Day view" type="button" onclick="setCalendarView('agendaDay')"></div>
+
+     </div>-->
+   	<ul data-role="listview"  id="ulcalpanel" data-icon="false">
+	<li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-grid" onclick="setCalendarView('month')">Month  view</a></li>
+	<li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-calendar" onclick="setCalendarView('agendaWeek')">Week  view</a></li>
+	<li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-day" onclick="setCalendarView('agendaDay')">Day  view</a></li>
+	<li data-role="list-divider">&nbsp;</li>
+	<li><a href="#" class="ui-btn ui-btn-icon-left ui-icon-refresh" onclick="setCalendar(1)">Refresh</a></li>
+	</ul>  	 
+   </div> 
+   
+   <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" class="mango">		
+	<div data-role="navbar" data-theme="b" data-mini="true" id="navbar" data-position="fixed" data-tap-toggle="false" >
+		<ul>
+		    <li><a href="#" data-icon="bars" onclick="setCalendarView('list')">Events list</a></li>
+			<li><a href="#" data-icon="month" onclick="setCalendarView('month')">Month</a></li>
+			<li><a href="#" data-icon="calendar" onclick="setCalendarView('agendaWeek')">Week</a></li>
+			<li><a href="#" data-icon="day"  onclick="setCalendarView('agendaDay')">Day</a></li>
+			<li><a href="#" data-icon="refresh"  onclick="setCalendar(1)">Refresh</a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
+
+</div>
+
+
+<div data-role="page" id="eventDialog">
+<div data-role="header" data-position="fixed" data-tap-toggle="false">
+ <a id="btnBack" data-role="button" href="#page_calendar" data-icon="back" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
+ <h3>Add an event</h3>
+</div>
+<div data-role="content">
+
+  <div data-role="fieldcontain">
+            <input type="hidden" id="currdate" />
+			<input type="hidden" id="savemode" value='add' />
+			<input type="hidden" id="saveid" value='' />
+			<input type="hidden" id="saverev" value='' />
+			<select id="customers"  placeholder="Customers">
+			 <option>1</option>
+			</select>
+			 <input name="txtTitle" id="txtTitle" placeholder="Title" value="" type="text" />
+    <fieldset data-role="controlgroup">
+    	<legend><span class="small">Event type</span></legend>
+         	<input type="radio" name="radiogroup" id="radio-choice-21" value="event" checked="checked" />
+         	<label for="radio-choice-21" >Event</label>
+         	<input type="radio" name="radiogroup" id="radio-choice-22" value="meeting"  />
+         	<label for="radio-choice-22">Meeting</label>
+    </fieldset>
+</div>
+	
+			 <table width="100%" border="0">
+			 <tr><td width="20%">
+			<span class="small">Start</span></td><td width="100px">
+            <input class="dp" id="startdate" placeholder="start date" type="text" data-role="datebox" data-options='{"mode":"datebox","overrideDateFormat":"%d/%m/%Y"}' />
+			</td><td width="100px">
+            <input class="dp" id="starttime" placeholder="start time" type="time" data-role="datebox" data-options='{"mode":"timebox", "overrideTimeFormat": 24, "overrideTimeOutput": "%k:%M"}' />
+			</td></tr>
+			<tr><td>
+            <span class="small">End</span></td><td>
+            <input class="dp" id="enddate" placeholder="end date" type="text" data-role="datebox" data-options='{"mode":"datebox","overrideDateFormat":"%d/%m/%Y"}' />
+			</td><td>
+			<input class="dp" id="endtime" placeholder="end time" type="text" data-role="datebox" data-options='{"mode":"timebox", "overrideTimeFormat": 24, "overrideTimeOutput": "%k:%M"}' />
+			</td></tr>
+			</table>
+			<textarea rows="20" name="txtDescr" id="txtDescr" placeholder="Description"> </textarea>
+		    <label><input id="allday" type="checkbox">All day event</label>
+  </div>	 		
+<a href="javascript:saveEvent()" id="savebutton" data-theme="b" class="actionbutton" data-role="button">Add event</a>
+</div>
+
+
+<div data-role="page" id="eventview" data-theme="a" class="sfondo" >
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<a id="btnBack" data-role="button" href="#page_calendar" data-icon="back" data-theme="b" data-iconpos="left" class="ui-btn-left">Back</a>
+	<h3>VIEW EVENT</h3>
+	
+	</div>
+<div data-role="content" id="content">
+</div>
+</div>
+
+<div data-role="page" id="page_elibrary" data-theme="a" class="sfondo" >
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<a id="btnBack" data-role="button" href="#menuPanel" data-icon="bars" data-theme="b" data-iconpos="left" class="ui-btn-left">&nbsp;</a>
+	<h3>E-LIBRARY</h3>
+	<a id="btnAdddoc" data-role="button" href="javascript:uploadDocument()" data-icon="plus" data-theme="b" data-iconpos="right" class="ui-btn-right">&nbsp;</a>
+	</div>
+
+<div data-role="content" id="content">
+<ul id="ulelib" data-role="listview">
+</ul>
+</div>
+<div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" class="mango">		
+	<div data-role="navbar" data-theme="b" data-mini="true" id="navbar" data-position="fixed" data-tap-toggle="false" >
+		<ul>
+		    <li><a href="#" data-icon="refresh" onclick="refreshElibrary()">Refresh</a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
+</div>
+
+
+
+<div data-role="page" id="page_upload">
+<div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<a id="btnBack" data-role="button" href="#page_elibrary"  data-icon="back" data-theme="b" data-iconpos="left" class="ui-btn-left">Back</a>
+	<h3>UPLOAD DOCUMENT</h3>
+	</div>
+<form id="imageform" method="post" enctype="multipart/form-data" action='http://ssodemyapp.mybluemix.net/upload'>
+<input type="text" id="titolo" name="titolo" placeholder="title" />
+<!--<label for="doccategory">Category<select name="doccategory" id="doccategory" data-native-menu="false" data-mini="false" smultiple="multiple" size="4" placeholder="category"></select></label>-->
+<div data-role="collapsible">
+    <h4>Document tags</h4>
+	<div id="doctags"></div>
+</div>
+<div data-role="collapsible">
+    <h4>Share with users</h4>
+	<div id="users"></div>
+</div>
+<label for="url">URL<input type="text" id="url" name="url" placeholder="url"/></label>
+
+<label for="fileattach">File<input data-role="button" type="file" name="fileattach" id="fileattach" placeholder="file" /></label>
+<!--<label for="shareusers">Share with<select name="shareusers" id="shareusers" data-native-menu="false" data-mini="false" smultiple="multiple" placeholder="Share with"></select></label>-->
+<input type="hidden" id="createddate" name="createddate" value="" />
+<input type="hidden" id="sharewithusers" name="sharewithusers" value="" />
+<input type="hidden" id="tags" name="tags" value="" />
+
+<a href="javascript:goUploadDoc()" data-role="button" data-theme="b">Save document</a>
+</form>
+
+<div id='preview'>
+</div>
+</div>
+
+<div data-role="page" id="page_viewdocument">
+
+<div data-role="header" data-position="fixed" data-tap-toggle="false">
+	<a id="btnBack" data-role="button" href="#page_elibrary"  data-icon="back" data-theme="b" data-iconpos="left" class="ui-btn-left">Back</a>
+	<h3>VIEW DOCUMENT</h3>
+	</div>
+	
+<div id="viewdoc">
+<br>
+<table border="1" width="90%" style="margin: 15px; padding: 15px;">
+<tr><td width="100px">Title</td><td><span id="title" class="bold"></span></td></tr>
+<tr><td>Category</td><td><span id="category" class="bold"></span></td></tr>
+<tr><td>Creation date</td><td><span id="createddate" class="bold"></span></td></tr>
+<tr><td>Created by</td><td><span id="createdby" class="bold"></span></td></tr>
+<tr><td>Filename</td><td><span id="filename" class="bold"></span></td></tr>
+<tr><td>Path</td><td><span id="path" class="bold"></span></td></tr>
+<tr><td>URL</td><td><span id="url" class="bold"></span></td></tr>
+</table>
+<br>
+<iframe id="urlframe" width="320" height="340" src="" frameborder="0" allowfullscreen></iframe>
+<img id="imgdoc" src="" />
+
+<!--<div class="ui-grid-a" style="height: 40px">
+	<div class="ui-block-a"><strong>I'm Block A</strong> and text inside will wrap</div>
+	<div class="ui-block-b"><strong>I'm Block B</strong> and text inside will wrap</div>
+</div>--><!-- /grid-a -->
+<a href="#" id="filelink" data-role="button" target="_new">Download file</a>
+
+
+</div>
+</div>
+
+ 
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!--<li data-role="list-divider" data-position="fixed" role="heading" data-theme="b"><%= data.length%> schede</li>-->
+<% for(var i=0; i<data.length; i++) { %>
+        <li sdata-theme='c' class="gradient">
+            <a class="gradient" id='<%= data[i].doc._id %>_<%= data[i].doc._rev %>' href='#' data-transition='slide'>
+                <span class="medium"><%= data[i].doc.nome.toUpperCase() %></span><br><span class="small">
+				<%
+				if ($.trim(data[i].doc.indirizzo)!="") { %>
+				<%=data[i].doc.indirizzo%>
+				<%
+				} else {
+				%>Address not defined
+				<%
+				}
+				 %></span>
+            </a>
+        </li>
+    <% } %>
